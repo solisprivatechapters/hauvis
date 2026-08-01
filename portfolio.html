@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — HAUVIS</title>
+<meta name="description" content="Découvrez les réalisations HAUVIS : immobilier, food, chantiers, marques et prises de vues aériennes.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:title" content="Portfolio — HAUVIS">
+<meta property="og:description" content="Découvrez les réalisations HAUVIS : immobilier, food, chantiers, marques et prises de vues aériennes.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--noir:#0B0B0C;--ivoire:#F5F3EF;--or:#C9A664;--or-clair:#DEC38B;--anthracite:#3A3A3D;--pierre:#E4DED2;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--ivoire);color:var(--noir);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-0.01em;}
+  a{text-decoration:none;color:inherit;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 40px;}
+  @media(max-width:640px){.wrap{padding:0 24px;}}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(11,11,12,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,166,100,0.15);}
+  .logo{font-family:'Fraunces',serif;font-size:22px;letter-spacing:0.14em;color:var(--ivoire);display:flex;align-items:baseline;gap:1px;}
+  .logo .v-mark{display:inline-block;transform:translateY(1px) skewY(-6deg);color:var(--or);}
+  nav{display:flex;align-items:center;gap:40px;}
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{color:var(--ivoire);font-size:13px;letter-spacing:0.04em;opacity:0.85;transition:opacity .25s;padding:6px 0;}
+  .nav-links a.current{opacity:1;border-bottom:1px solid var(--or);}
+  .nav-links a:hover{opacity:1;}
+  .has-drop{position:relative;}
+  .dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--noir);border:1px solid rgba(201,166,100,0.2);min-width:220px;padding:10px 0;margin-top:14px;opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:all .25s ease;}
+  .has-drop:hover .dropdown{opacity:1;visibility:visible;transform:translate(-50%,0);}
+  .dropdown a{display:block;padding:11px 22px;font-size:12.5px;opacity:0.8;}
+  .dropdown a:hover{opacity:1;background:rgba(201,166,100,0.08);}
+  .cta-btn{background:var(--or);color:var(--noir);padding:11px 24px;font-size:12.5px;letter-spacing:0.04em;font-weight:500;border:1px solid var(--or);transition:background .25s, color .25s;white-space:nowrap;}
+  .cta-btn:hover{background:transparent;color:var(--or);}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+  .burger span{width:22px;height:1px;background:var(--ivoire);}
+  @media(max-width:900px){.nav-links{display:none;}.burger{display:flex;}}
+
+  /* Hero leger */
+  .p-hero{padding:170px 0 50px;}
+  .p-hero h1{font-size:clamp(34px,5vw,58px);max-width:700px;margin-bottom:16px;}
+  .p-hero p{font-size:15px;color:var(--anthracite);max-width:480px;line-height:1.6;}
+
+  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px;}
+  .filter-tag{padding:9px 18px;font-size:12.5px;border:1px solid var(--anthracite);color:var(--anthracite);cursor:pointer;transition:all .2s;background:transparent;font-family:'Inter',sans-serif;}
+  .filter-tag.active, .filter-tag:hover{background:var(--noir);color:var(--ivoire);border-color:var(--noir);}
+
+  /* Grille masonry-like */
+  .p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-bottom:110px;}
+  @media(max-width:1000px){.p-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:700px){.p-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:460px){.p-grid{grid-template-columns:1fr;}}
+  .p-item{aspect-ratio:3/4;overflow:hidden;position:relative;cursor:pointer;transition:opacity .3s, transform .3s;}
+  .p-item.hidden{display:none;}
+  .p-item.tall{aspect-ratio:3/5;}
+  .p-item.wide{aspect-ratio:5/4;grid-column:span 2;}
+  @media(max-width:700px){.p-item.wide{grid-column:span 1;aspect-ratio:4/5;}}
+  .p-item img{transition:transform .6s;}
+  .p-item:hover img{transform:scale(1.06);}
+  .p-item .p-overlay{position:absolute;inset:0;background:linear-gradient(0deg, rgba(11,11,12,0.8), transparent 55%);opacity:0;transition:opacity .3s;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;}
+  .p-item:hover .p-overlay{opacity:1;}
+  .p-overlay .cat{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--or-clair);margin-bottom:6px;}
+  .p-overlay .title{color:var(--ivoire);font-size:14px;font-family:'Fraunces',serif;}
+
+  .final{background:var(--noir);color:var(--ivoire);padding:100px 0;text-align:center;}
+  .final h2{font-size:clamp(26px,3.2vw,38px);margin-bottom:24px;}
+  .final .btn-solid{background:var(--or);color:var(--noir);padding:15px 34px;font-size:13px;letter-spacing:0.04em;font-weight:500;display:inline-block;transition:background .25s;}
+  .final .btn-solid:hover{background:var(--or-clair);}
+
+  footer{background:var(--noir);color:rgba(245,243,239,0.6);padding:50px 0;border-top:1px solid rgba(201,166,100,0.15);text-align:center;font-size:11.5px;}
+
+  .reveal{opacity:1;transform:none;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="has-drop">
+        <a href="#">Prestations ▾</a>
+        <div class="dropdown">
+          <a href="immobilier.html">Immobilier</a>
+          <a href="food.html">Food</a>
+          <a href="chantier.html">Suivi de chantier</a>
+          <a href="community-management.html">Community Management</a>
+          <a href="marques.html">Marques &amp; Publicité</a>
+        </div>
+      </div>
+      <a href="portfolio.html" class="current">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="cta-btn">Demander un devis</a>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<section class="p-hero">
+  <div class="wrap">
+    <div class="reveal">
+      <h1>Portfolio</h1>
+      <p>Une sélection de nos réalisations, tous secteurs confondus — immobilier, food, chantiers, marques et prises de vues aériennes.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="filters reveal">
+      <div class="filter-tag active" data-filter="tout">Tout</div>
+      <div class="filter-tag" data-filter="immobilier">Immobilier</div>
+      <div class="filter-tag" data-filter="drone">Drone</div>
+      <div class="filter-tag" data-filter="food">Food</div>
+      <div class="filter-tag" data-filter="marques">Marques</div>
+      <div class="filter-tag" data-filter="chantiers">Chantiers</div>
+      <div class="filter-tag" data-filter="videos">Vidéos</div>
+    </div>
+
+    <div class="p-grid reveal">
+      <div class="p-item wide" data-cat="immobilier">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000&auto=format&fit=crop" alt="Villa crépuscule">
+        <div class="p-overlay"><div class="cat">Immobilier — Vente</div><div class="title">Villa contemporaine, Provence</div></div>
+      </div>
+      <div class="p-item" data-cat="immobilier">
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=700&auto=format&fit=crop" alt="Appartement">
+        <div class="p-overlay"><div class="cat">Immobilier — Location</div><div class="title">Appartement, Bordeaux</div></div>
+      </div>
+      <div class="p-item tall" data-cat="drone">
+        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=700&auto=format&fit=crop" alt="Vue aérienne domaine">
+        <div class="p-overlay"><div class="cat">Drone</div><div class="title">Domaine viticole</div></div>
+      </div>
+      <div class="p-item" data-cat="food">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=700&auto=format&fit=crop" alt="Table gastronomique">
+        <div class="p-overlay"><div class="cat">Food</div><div class="title">Restaurant, Paris</div></div>
+      </div>
+      <div class="p-item" data-cat="chantiers">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=700&auto=format&fit=crop" alt="Chantier">
+        <div class="p-overlay"><div class="cat">Chantiers</div><div class="title">Résidence, Lyon</div></div>
+      </div>
+      <div class="p-item wide" data-cat="marques">
+        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1000&auto=format&fit=crop" alt="Contenu de marque">
+        <div class="p-overlay"><div class="cat">Marques</div><div class="title">Lifestyle, marque cosmétique</div></div>
+      </div>
+      <div class="p-item" data-cat="videos">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=700&auto=format&fit=crop" alt="Vidéo immobilière">
+        <div class="p-overlay"><div class="cat">Vidéos — Immobilier</div><div class="title">Vidéo cinématique, Vente</div></div>
+      </div>
+      <div class="p-item tall" data-cat="immobilier">
+        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=700&auto=format&fit=crop" alt="Location saisonnière">
+        <div class="p-overlay"><div class="cat">Immobilier — Location</div><div class="title">Gîte, Dordogne</div></div>
+      </div>
+      <div class="p-item" data-cat="food">
+        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=700&auto=format&fit=crop" alt="Traiteur">
+        <div class="p-overlay"><div class="cat">Food</div><div class="title">Traiteur, réception</div></div>
+      </div>
+      <div class="p-item" data-cat="drone">
+        <img src="https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?q=80&w=700&auto=format&fit=crop" alt="Chantier aérien">
+        <div class="p-overlay"><div class="cat">Drone — Chantier</div><div class="title">Lotissement en construction</div></div>
+      </div>
+      <div class="p-item wide" data-cat="immobilier">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1000&auto=format&fit=crop" alt="Villa piscine">
+        <div class="p-overlay"><div class="cat">Immobilier — Vente</div><div class="title">Villa avec piscine, Côte d'Azur</div></div>
+      </div>
+      <div class="p-item" data-cat="videos">
+        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=700&auto=format&fit=crop" alt="Vidéo food">
+        <div class="p-overlay"><div class="cat">Vidéos — Food</div><div class="title">Réel restaurant</div></div>
+      </div>
+      <div class="p-item" data-cat="marques">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=700&auto=format&fit=crop" alt="Packshot">
+        <div class="p-overlay"><div class="cat">Marques</div><div class="title">Packshot, cosmétique</div></div>
+      </div>
+      <div class="p-item tall" data-cat="chantiers">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=700&auto=format&fit=crop" alt="Chantier structure">
+        <div class="p-overlay"><div class="cat">Chantiers — Timelapse</div><div class="title">Immeuble de bureaux</div></div>
+      </div>
+      <div class="p-item" data-cat="food">
+        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=700&auto=format&fit=crop" alt="Hôtel petit-déjeuner">
+        <div class="p-overlay"><div class="cat">Food — Hôtel</div><div class="title">Petit-déjeuner, hôtel 4 étoiles</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Un projet en tête ? Discutons-en.</h2>
+      <a href="contact.html" class="btn-solid">Demander un devis</a>
+    </div>
+  </div>
+</section>
+
+<footer>HAUVIS — Portfolio — Immobilier, Food, Chantiers, Marques.</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+
+  document.querySelectorAll('.filter-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+      const filter = tag.dataset.filter;
+      document.querySelectorAll('.p-item').forEach(item => {
+        if(filter === 'tout' || item.dataset.cat === filter){
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
