@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>HAUVIS — Présentation courte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page{size:297mm 210mm;margin:0;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;color:#F4F1EA;background:#0A0A0A;-webkit-font-smoothing:antialiased;}
+  .serif{font-family:'Fraunces',serif;font-weight:400;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  .page{width:297mm;height:210mm;position:relative;overflow:hidden;page-break-after:always;break-after:page;background:#0A0A0A;}
+  .page:last-child{page-break-after:auto;}
+  .pad{padding:20mm 22mm;height:100%;position:relative;z-index:2;}
+  .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#DEC38B;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+  .eyebrow::before{content:"";width:28px;height:1px;background:#C6A46A;}
+  .pnum{position:absolute;bottom:14mm;right:22mm;font-size:10px;color:rgba(244,241,234,0.4);letter-spacing:0.08em;z-index:3;}
+  .logo-mark{font-family:'Fraunces',serif;font-size:15px;letter-spacing:0.16em;position:absolute;top:14mm;left:22mm;z-index:3;color:#F4F1EA;}
+  .logo-mark span{color:#C6A46A;}
+  .bg-photo{position:absolute;inset:0;}
+  .bg-photo img{opacity:0.55;}
+  .bg-photo.veil-bottom::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0.15) 0%,rgba(10,10,10,0.35) 45%,rgba(10,10,10,0.95) 100%);}
+  h1{font-family:'Fraunces',serif;font-weight:400;font-size:44px;line-height:1.12;max-width:190mm;}
+  h1 em{font-style:italic;color:#DEC38B;}
+  h2{font-family:'Fraunces',serif;font-weight:400;font-size:30px;line-height:1.2;max-width:170mm;}
+  .lead{font-size:15px;line-height:1.75;color:rgba(244,241,234,0.78);max-width:130mm;margin-top:18px;}
+  .page.light{background:#F4F1EA;color:#333333;}
+  .page.light .eyebrow{color:#C6A46A;}
+  .page.light h1, .page.light h2{color:#0A0A0A;}
+  .page.light .lead{color:#333333;}
+  .page.light .logo-mark{color:#0A0A0A;}
+  .page.light .pnum{color:rgba(51,51,51,0.4);}
+  .checklist{list-style:none;margin-top:26px;max-width:150mm;}
+  .checklist li{display:flex;gap:14px;padding:9px 0;border-bottom:1px solid rgba(51,51,51,0.15);font-size:13.5px;}
+  .checklist .mark{color:#C6A46A;font-family:'Fraunces',serif;font-style:italic;flex-shrink:0;}
+  .collections{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px;}
+  .collection{border:1px solid rgba(51,51,51,0.2);padding:20px 18px;}
+  .collection.highlight{border-color:#C6A46A;background:rgba(198,164,106,0.06);}
+  .collection h4{font-family:'Fraunces',serif;font-size:16px;margin-bottom:6px;color:#0A0A0A;}
+  .collection .sub{font-size:11px;color:#555;line-height:1.5;}
+  .badge-gold{display:inline-block;background:#C6A46A;color:#0A0A0A;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 9px;font-weight:600;margin-bottom:8px;}
+  .contact-grid{display:flex;justify-content:space-between;align-items:flex-end;height:100%;}
+  .contact-info .big{font-family:'Fraunces',serif;font-size:26px;color:#F4F1EA;margin-bottom:16px;}
+  .contact-info p{font-size:13px;margin-bottom:8px;color:rgba(244,241,234,0.75);}
+  .qr-box{width:110px;height:110px;background:#F4F1EA;display:flex;align-items:center;justify-content:center;color:#0A0A0A;font-size:9px;text-align:center;padding:8px;}
+  .cta-line{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:#DEC38B;margin-top:30px;max-width:150mm;line-height:1.5;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COUVERTURE / PITCH -->
+<div class="page">
+  <div class="bg-photo veil-bottom">
+    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1800&auto=format&fit=crop" alt="Rooftop restaurant premium">
+  </div>
+  <div class="pad" style="display:flex;flex-direction:column;justify-content:space-between;">
+    <div class="serif" style="font-size:20px;letter-spacing:0.18em;">HAU<span style="color:#C6A46A;">V</span>IS</div>
+    <div>
+      <h1>L'image qui transforme<br>un lieu en <em>expérience.</em></h1>
+      <p class="lead" style="color:rgba(244,241,234,0.85);">Studio de stratégie visuelle premium — Photographie · Vidéo · Direction artistique, pour les hôtels, restaurants et lieux d'expérience.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — POURQUOI HAUVIS + FORMULES CONDENSEES -->
+<div class="page light">
+  <div class="logo-mark">HAU<span>V</span>IS</div>
+  <div class="pad">
+    <div class="eyebrow">Pourquoi HAUVIS</div>
+    <h2>Votre établissement se découvre avant même la première visite.</h2>
+    <p class="lead">L'image est souvent le premier contact entre un client et un établissement. HAUVIS construit une perception — pas seulement des photos.</p>
+    <ul class="checklist">
+      <li><span class="mark">—</span> Direction artistique complète, pensée pour votre identité</li>
+      <li><span class="mark">—</span> Photo, vidéo et drone en une seule collaboration</li>
+      <li><span class="mark">—</span> Contenus prêts pour site, réseaux et plateformes de réservation</li>
+    </ul>
+    <div class="collections">
+      <div class="collection">
+        <h4>Essentielle</h4>
+        <p class="sub">Photographie professionnelle &amp; contenus réseaux.</p>
+      </div>
+      <div class="collection highlight">
+        <span class="badge-gold">Recommandée</span>
+        <h4>Signature</h4>
+        <p class="sub">Photo + vidéo immersive + drone.</p>
+      </div>
+      <div class="collection">
+        <h4>Expérience</h4>
+        <p class="sub">Accompagnement récurrent, campagnes visuelles.</p>
+      </div>
+    </div>
+    <p class="cta-line" style="color:#8a6d3b;">Parlons de votre établissement.</p>
+  </div>
+  <div class="pnum">02 — HAUVIS</div>
+</div>
+
+<!-- PAGE 3 — CONTACT -->
+<div class="page">
+  <div class="bg-photo veil-bottom">
+    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1800&auto=format&fit=crop" alt="Hôtel boutique">
+  </div>
+  <div class="logo-mark">HAU<span>V</span>IS</div>
+  <div class="pad" style="height:100%;">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow">Contact</div>
+        <div class="big">HAUVIS</div>
+        <p>Studio de stratégie visuelle premium</p>
+        <p>contact.hauvis@gmail.com</p>
+        <p>www.hauvis.fr</p>
+      </div>
+      <div class="qr-box">QR code<br>vers le site</div>
+    </div>
+  </div>
+  <div class="pnum">03 — HAUVIS</div>
+</div>
+
+</body>
+</html>
