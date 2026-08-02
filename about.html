@@ -101,7 +101,9 @@
   /* Poles */
   .poles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   @media(max-width:800px){.poles-grid{grid-template-columns:1fr;}}
-  .pole-card{border:1px solid var(--pierre);padding:36px 30px;}
+  .pole-card{border:1px solid var(--pierre);overflow:hidden;}
+  .pole-media{aspect-ratio:4/3;overflow:hidden;}
+  .pole-body{padding:26px 24px;}
   .pole-card .pole-eyebrow{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--or);margin-bottom:10px;}
   .pole-card h3{font-size:19px;margin-bottom:12px;}
   .pole-card p{font-size:13.5px;color:var(--anthracite);line-height:1.65;}
@@ -173,7 +175,7 @@
 <!-- HERO -->
 <section class="hero" style="padding:0;">
   <div class="hero-media">
-    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1800&auto=format&fit=crop" alt="HAUVIS, studio de stratégie visuelle premium">
+    <img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-07-31-a-23.11.23.png" alt="HAUVIS, studio de stratégie visuelle premium">
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow">À propos</div>
@@ -216,16 +218,25 @@
     </div>
     <div class="poles-grid">
       <div class="pole-card">
-        <h3>Immobilier premium</h3>
-        <p>Agences, promoteurs, mandataires et conciergeries — pour vendre et louer plus efficacement grâce à une image qui reflète la vraie valeur des biens.</p>
+        <div class="pole-media"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-07-31-a-23.16.30.png" alt="Immobilier premium"></div>
+        <div class="pole-body">
+          <h3>Immobilier premium</h3>
+          <p>Agences, promoteurs, mandataires et conciergeries — pour vendre et louer plus efficacement grâce à une image qui reflète la vraie valeur des biens.</p>
+        </div>
       </div>
       <div class="pole-card">
-        <h3>Suivi de chantier &amp; drone</h3>
-        <p>Promoteurs, architectes et entreprises BTP — pour documenter, communiquer et valoriser l'avancement des projets dans la durée.</p>
+        <div class="pole-media"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-17.40.06.png" alt="Suivi de chantier &amp; drone"></div>
+        <div class="pole-body">
+          <h3>Suivi de chantier &amp; drone</h3>
+          <p>Promoteurs, architectes et entreprises BTP — pour documenter, communiquer et valoriser l'avancement des projets dans la durée.</p>
+        </div>
       </div>
       <div class="pole-card">
-        <h3>Hôtellerie &amp; Restaurant</h3>
-        <p>Restaurants, hôtels, traiteurs et lieux événementiels — pour donner envie de réserver et renforcer l'image de chaque établissement.</p>
+        <div class="pole-media"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-15.59.51.png" alt="Hôtellerie &amp; Restaurant"></div>
+        <div class="pole-body">
+          <h3>Hôtellerie &amp; Restaurant</h3>
+          <p>Restaurants, hôtels, traiteurs et lieux événementiels — pour donner envie de réserver et renforcer l'image de chaque établissement.</p>
+        </div>
       </div>
     </div>
   </div>
