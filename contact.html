@@ -4,17 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — HAUVIS</title>
-<meta name="description" content="Contactez HAUVIS pour un devis ou réservez un créneau. Agence de création de contenus visuels premium.">
+<meta name="description" content="Contactez HAUVIS pour un devis ou réservez un créneau. Studio de stratégie visuelle premium.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:title" content="Contact — HAUVIS">
-<meta property="og:description" content="Contactez HAUVIS pour un devis ou réservez un créneau. Agence de création de contenus visuels premium.">
+<meta property="og:description" content="Contactez HAUVIS pour un devis ou réservez un créneau. Studio de stratégie visuelle premium.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
+<!-- GOOGLE ANALYTICS 4 — remplacer G-XXXXXXXXXX par l'ID de mesure une fois la propriété créée -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--noir:#0B0B0C;--ivoire:#F5F3EF;--or:#C9A664;--or-clair:#DEC38B;--anthracite:#3A3A3D;--pierre:#E4DED2;}
+  :root{--noir:#0A0A0A;--ivoire:#F4F1EA;--or:#C6A46A;--or-clair:#DEC38B;--anthracite:#333333;--pierre:#D8D1C4;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{font-family:'Inter',sans-serif;background:var(--ivoire);color:var(--noir);-webkit-font-smoothing:antialiased;}
@@ -39,8 +47,28 @@
   .dropdown a:hover{opacity:1;background:rgba(201,166,100,0.08);}
   .cta-btn{background:var(--or);color:var(--noir);padding:11px 24px;font-size:12.5px;letter-spacing:0.04em;font-weight:500;border:1px solid var(--or);transition:background .25s, color .25s;white-space:nowrap;}
   .cta-btn:hover{background:transparent;color:var(--or);}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:14px 10px;margin:-14px -10px;}
   .burger span{width:22px;height:1px;background:var(--ivoire);}
+  .nav-links.mobile-open{
+    display:flex !important;flex-direction:column;align-items:flex-start;gap:0;
+    position:fixed;top:64px;left:0;right:0;z-index:150;
+    background:var(--noir);padding:8px 40px 24px;
+    border-bottom:1px solid rgba(201,166,100,0.18);
+    max-height:calc(100vh - 64px);overflow-y:auto;
+  }
+  .nav-links.mobile-open a{padding:14px 0;width:100%;border-bottom:1px solid rgba(245,243,239,0.08);opacity:0.9;}
+  .nav-links.mobile-open .has-drop{width:100%;}
+  .nav-links.mobile-open .dropdown{
+    position:static;opacity:1;visibility:visible;transform:none;
+    background:transparent;border:none;padding:0 0 0 16px;margin-top:0;min-width:0;
+  }
+  .nav-links.mobile-open .dropdown a{border-bottom:none;padding:10px 0;font-size:12px;opacity:0.7;}
+  .burger span{transition:transform .25s ease, opacity .25s ease;}
+  .burger.active span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .burger.active span:nth-child(2){opacity:0;}
+  .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:640px){.nav-links.mobile-open{padding:8px 24px 24px;}}
+
   @media(max-width:900px){.nav-links{display:none;}.burger{display:flex;}}
 
   main{padding-top:110px;}
@@ -120,32 +148,43 @@
   .rdv-success{display:none;font-size:13.5px;color:var(--anthracite);border-left:2px solid var(--or);padding-left:16px;line-height:1.6;}
   .rdv-success.show{display:block;}
 
-  footer{background:var(--noir);color:rgba(245,243,239,0.6);padding:50px 0;border-top:1px solid rgba(201,166,100,0.15);text-align:center;font-size:11.5px;}
+  footer{background:var(--noir);color:rgba(245,243,239,0.6);padding-top:70px;border-top:1px solid rgba(201,166,100,0.15);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;}
+  @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  .footer-grid h5{color:var(--ivoire);font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;font-weight:500;}
+  .footer-grid a, .footer-grid p{display:block;font-size:13px;margin-bottom:12px;color:rgba(245,243,239,0.55);}
+  .footer-grid a:hover{color:var(--or-clair);}
+  .footer-logo{font-family:'Fraunces',serif;font-size:20px;letter-spacing:0.1em;color:var(--ivoire);margin-bottom:16px;}
+  .footer-bottom{
+    border-top:1px solid rgba(245,243,239,0.1);padding:24px 0;
+    display:flex;justify-content:space-between;font-size:11.5px;flex-wrap:wrap;gap:10px;
+  }
 
   .reveal{opacity:1;transform:none;}
   .reveal.in{opacity:1;transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){*{transition:none !important;}html{scroll-behavior:auto;}}
+  .logo-block{display:flex;flex-direction:column;line-height:1.1;}
+  .tagline{font-size:8.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--or-clair);margin-top:4px;font-family:'Inter',sans-serif;font-weight:400;}
+  @media(max-width:900px){.tagline{display:none;}}
 </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a>
+  <div class="logo-block"><a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a><span class="tagline">Visual Strategy Studio</span></div>
   <nav>
     <div class="nav-links">
       <a href="index.html">Accueil</a>
       <div class="has-drop">
-        <a href="#">Prestations ▾</a>
+        <a href="#">Expertises ▾</a>
         <div class="dropdown">
-          <a href="immobilier.html">Immobilier</a>
-          <a href="food.html">Food</a>
-          <a href="chantier.html">Suivi de chantier</a>
-          <a href="community-management.html">Community Management</a>
-          <a href="marques.html">Marques &amp; Publicité</a>
+          <a href="immobilier.html">Immobilier premium</a>
+          <a href="chantier.html">Suivi de chantier &amp; drone</a>
+          <a href="food.html">Hôtellerie &amp; Restaurant</a>
         </div>
       </div>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html" class="current">Contact</a>
+      <a href="portfolio.html">Réalisations</a>
+      <a href="contact.html" class="current">Parler d\'un projet</a>
     </div>
     <a href="#devis-form" class="cta-btn">Demander un devis</a>
     <div class="burger"><span></span><span></span><span></span></div>
@@ -163,23 +202,24 @@
 
   <section class="contact-grid wrap" id="devis-form">
     <div class="form-card reveal">
-      <form class="form-row" onsubmit="return false;">
+      <form class="form-row" name="contact-devis" method="POST" action="merci.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact-devis">
+        <input type="hidden" name="page_origine" value="Contact">
+        <p style="position:absolute;left:-9999px;" aria-hidden="true"><label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div class="form-row-inline">
-          <input type="text" placeholder="Nom complet" required>
-          <input type="email" placeholder="Email" required>
+          <input type="text" name="nom" placeholder="Nom complet" required>
+          <input type="email" name="email" placeholder="Email" required>
         </div>
         <div class="form-row-inline">
-          <input type="tel" placeholder="Téléphone">
-          <select required>
+          <input type="tel" name="telephone" placeholder="Téléphone">
+          <select required name="activite">
             <option value="" disabled selected>Activité concernée</option>
             <option>Immobilier</option>
-            <option>Food</option>
-            <option>Suivi de chantier</option>
-            <option>Community Management</option>
-            <option>Marques &amp; Publicité</option>
+            <option>Hôtellerie &amp; Restaurant</option>
+            <option>Suivi de chantier &amp; drone</option>
           </select>
         </div>
-        <textarea placeholder="Votre message" rows="4"></textarea>
+        <textarea name="message" placeholder="Votre message" rows="4"></textarea>
         <button type="submit">Envoyer le message</button>
         <div class="form-note">Réponse sous 24h. Vos informations ne sont utilisées que pour vous recontacter.</div>
       </form>
@@ -189,54 +229,54 @@
       <div class="info-block">
         <h4>Coordonnées</h4>
         <a href="mailto:contact.hauvis@gmail.com">contact.hauvis@gmail.com</a>
-        <a href="tel:+33636187783">06 36 18 77 83</a>
+        <a href="tel:+33650113238">06 50 11 32 38</a>
       </div>
       <div class="info-block">
         <h4>Zone d'intervention</h4>
-        <p>PACA, Île-de-France, Occitanie — déplacements possibles sur devis pour les autres régions.</p>
+        <p>PACA, Île-de-France, Occitanie, Corse — déplacements possibles sur devis pour les autres régions.</p>
         <div class="map-embed">
           <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
             <!-- Contour stylisé de la France -->
             <path d="M230,20 L300,70 L290,150 L330,260 L300,310 L220,380 L100,360 L60,260 L30,150 L110,90 L180,40 Z"
-                  fill="none" stroke="#3A3A3D" stroke-width="2" stroke-linejoin="round"/>
+                  fill="none" stroke="#333333" stroke-width="2" stroke-linejoin="round"/>
 
             <!-- Corse -->
             <path d="M355,270 L365,290 L362,320 L352,345 L345,320 L348,290 Z"
-                  fill="none" stroke="#3A3A3D" stroke-width="2" stroke-linejoin="round"/>
+                  fill="none" stroke="#333333" stroke-width="2" stroke-linejoin="round"/>
 
             <!-- Trajet en pointillés entre les grandes villes -->
             <path d="M220,130 L260,210 L295,310 L290,300 L230,330 L150,320 L220,130"
-                  fill="none" stroke="#C9A664" stroke-width="2" stroke-dasharray="7,6" stroke-linecap="round"/>
+                  fill="none" stroke="#C6A46A" stroke-width="2" stroke-dasharray="7,6" stroke-linecap="round"/>
             <path d="M295,310 L353,305"
-                  fill="none" stroke="#C9A664" stroke-width="2" stroke-dasharray="7,6" stroke-linecap="round"/>
+                  fill="none" stroke="#C6A46A" stroke-width="2" stroke-dasharray="7,6" stroke-linecap="round"/>
 
             <!-- Lyon -->
-            <circle cx="260" cy="210" r="5" fill="#0B0B0C"/>
-            <text x="270" y="206" font-family="Inter, sans-serif" font-size="13" fill="#0B0B0C">Lyon</text>
+            <circle cx="260" cy="210" r="5" fill="#0A0A0A"/>
+            <text x="270" y="206" font-family="Inter, sans-serif" font-size="13" fill="#0A0A0A">Lyon</text>
 
             <!-- Marseille -->
-            <circle cx="295" cy="310" r="5" fill="#0B0B0C"/>
-            <text x="305" y="314" font-family="Inter, sans-serif" font-size="13" fill="#0B0B0C">Marseille</text>
+            <circle cx="295" cy="310" r="5" fill="#0A0A0A"/>
+            <text x="305" y="314" font-family="Inter, sans-serif" font-size="13" fill="#0A0A0A">Marseille</text>
 
             <!-- Aix-en-Provence -->
-            <circle cx="290" cy="300" r="5" fill="#0B0B0C"/>
-            <text x="300" y="288" font-family="Inter, sans-serif" font-size="13" fill="#0B0B0C">Aix-en-Provence</text>
+            <circle cx="290" cy="300" r="5" fill="#0A0A0A"/>
+            <text x="300" y="288" font-family="Inter, sans-serif" font-size="13" fill="#0A0A0A">Aix-en-Provence</text>
 
             <!-- Montpellier -->
-            <circle cx="230" cy="330" r="5" fill="#0B0B0C"/>
-            <text x="240" y="334" font-family="Inter, sans-serif" font-size="13" fill="#0B0B0C">Montpellier</text>
+            <circle cx="230" cy="330" r="5" fill="#0A0A0A"/>
+            <text x="240" y="334" font-family="Inter, sans-serif" font-size="13" fill="#0A0A0A">Montpellier</text>
 
             <!-- Toulouse -->
-            <circle cx="150" cy="320" r="5" fill="#0B0B0C"/>
-            <text x="90" y="334" font-family="Inter, sans-serif" font-size="13" fill="#0B0B0C">Toulouse</text>
+            <circle cx="150" cy="320" r="5" fill="#0A0A0A"/>
+            <text x="90" y="334" font-family="Inter, sans-serif" font-size="13" fill="#0A0A0A">Toulouse</text>
 
             <!-- Ajaccio (Corse) -->
-            <circle cx="353" cy="305" r="5" fill="#0B0B0C"/>
-            <text x="352" y="360" font-family="Inter, sans-serif" font-size="13" fill="#0B0B0C" text-anchor="middle">Ajaccio</text>
+            <circle cx="353" cy="305" r="5" fill="#0A0A0A"/>
+            <text x="352" y="360" font-family="Inter, sans-serif" font-size="13" fill="#0A0A0A" text-anchor="middle">Ajaccio</text>
 
             <!-- Paris : base -->
-            <circle cx="220" cy="130" r="8" fill="#C9A664" stroke="#0B0B0C" stroke-width="1.5"/>
-            <text x="232" y="126" font-family="Fraunces, serif" font-size="15" fill="#0B0B0C">Paris</text>
+            <circle cx="220" cy="130" r="8" fill="#C6A46A" stroke="#0A0A0A" stroke-width="1.5"/>
+            <text x="232" y="126" font-family="Fraunces, serif" font-size="15" fill="#0A0A0A">Paris</text>
           </svg>
         </div>
       </div>
@@ -246,42 +286,70 @@
   <section class="rdv-section reveal">
     <div class="wrap">
       <div class="eyebrow">Prise de rendez-vous</div>
-      <h2 class="rdv-title">Réservez un créneau de 20 minutes</h2>
-      <p class="rdv-sub">Choisissez une date et un horaire — nous confirmons votre créneau par email sous 24h.</p>
+      <h2 class="rdv-title">Réservez un appel découverte de 20 minutes</h2>
+      <p class="rdv-sub">Un échange court pour cerner votre projet et vous orienter vers la formule adaptée — créneaux limités, sur sélection.</p>
 
-      <div class="rdv-widget">
-        <div class="rdv-calendar">
-          <div class="rdv-cal-header">
-            <button id="prevMonth" aria-label="Mois précédent">‹</button>
-            <span id="calMonthLabel"></span>
-            <button id="nextMonth" aria-label="Mois suivant">›</button>
-          </div>
-          <div class="rdv-cal-weekdays">
-            <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
-          </div>
-          <div class="rdv-cal-grid" id="calGrid"></div>
-        </div>
+      <!--
+        INTÉGRATION CALENDLY — à activer une fois le compte configuré sur calendly.com :
 
-        <div class="rdv-slots">
-          <div class="rdv-slots-label" id="slotsLabel">Sélectionnez une date dans le calendrier</div>
-          <div class="rdv-slots-grid" id="slotsGrid"></div>
+        1. Créer un événement nommé "Appel découverte HAUVIS — 20 min"
+           Durée : 20 minutes. Objectif interne : qualification du projet avant devis.
 
-          <div class="rdv-confirm" id="rdvConfirm">
-            <input type="text" id="rdvName" placeholder="Nom complet">
-            <input type="email" id="rdvEmail" placeholder="Email">
-            <button id="rdvSubmit">Confirmer la demande</button>
-          </div>
+        2. Disponibilités : définir des créneaux réalistes selon ton emploi du temps réel
+           (éviter un calendrier trop ouvert — quelques créneaux par semaine suffisent).
 
-          <div class="rdv-success" id="rdvSuccess">
-            Demande envoyée pour le <strong id="rdvSuccessDate"></strong> — nous confirmons votre créneau par email sous 24h.
-          </div>
-        </div>
-      </div>
+        3. Dans "Invitee Questions", ajouter dans cet ordre (accessible pros ET particuliers) :
+           - Nom et prénom (texte, obligatoire)
+           - Email (texte, obligatoire — déjà demandé par défaut par Calendly)
+           - Téléphone (texte, obligatoire)
+           - Type de projet (menu déroulant, obligatoire) :
+               Immobilier premium / Suivi de chantier & drone / Hôtellerie & Restaurant / Autre projet
+           - Description du besoin (texte long, obligatoire)
+
+        4. Copier le lien de l'événement (ex : https://calendly.com/hauvis/appel-decouverte-20min)
+           et remplacer CALENDLY_URL ci-dessous par ce lien exact, aux deux endroits où il apparaît.
+      -->
+      <div class="calendly-inline-widget" data-url="CALENDLY_URL?hide_gdpr_banner=1&background_color=0a0a0a&text_color=f4f1ea&primary_color=c6a46a" style="min-width:320px;height:680px;"></div>
+      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+      <p style="font-size:12.5px;color:var(--anthracite);margin-top:20px;">
+        Le calendrier ne s'affiche pas ? <a href="mailto:contact.hauvis@gmail.com" style="color:var(--or);border-bottom:1px solid var(--or);">Écrivez-nous directement</a> ou appelez le <a href="tel:+33650113238" style="color:var(--or);border-bottom:1px solid var(--or);">06 50 11 32 38</a>.
+      </p>
     </div>
   </section>
 </main>
 
-<footer>HAUVIS — Contact — Réponse sous 24h.</footer>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">HAU<span style="color:var(--or)">V</span>IS</div>
+        <p>Studio de stratégie visuelle premium — Immobilier, Chantier et Hôtellerie-Restaurant.</p>
+      </div>
+      <div>
+        <h5>Prestations</h5>
+        <a href="immobilier.html">Immobilier</a>
+        <a href="food.html">Hôtellerie &amp; Restaurant</a>
+        <a href="chantier.html">Suivi de chantier &amp; drone</a>
+      </div>
+      <div>
+        <h5>Entreprise</h5>
+        <a href="portfolio.html">Réalisations</a>
+        <a href="about.html">À propos</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="mailto:contact.hauvis@gmail.com">contact.hauvis@gmail.com</a>
+        <a href="tel:+33650113238">06 50 11 32 38</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HAUVIS — Tous droits réservés</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#donnees">Politique de confidentialité</a> · <a href="cgv.html">CGV</a></span>
+    </div>
+  </div>
+</footer>
 
 <script>
   const revealEls = document.querySelectorAll('.reveal');
@@ -290,112 +358,43 @@
   }, { threshold: 0.08 });
   revealEls.forEach(el => io.observe(el));
 
-  // ===== Calendrier de prise de rendez-vous =====
-  (function(){
-    const monthLabel = document.getElementById('calMonthLabel');
-    const calGrid = document.getElementById('calGrid');
-    const slotsLabel = document.getElementById('slotsLabel');
-    const slotsGrid = document.getElementById('slotsGrid');
-    const rdvConfirm = document.getElementById('rdvConfirm');
-    const rdvSuccess = document.getElementById('rdvSuccess');
-    const rdvSuccessDate = document.getElementById('rdvSuccessDate');
-
-    const today = new Date();
-    today.setHours(0,0,0,0);
-    let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
-    let selectedDate = null;
-    let selectedSlot = null;
-
-    const monthNames = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
-    const slots = ['09:00','10:00','11:00','14:00','15:00','16:00','17:00'];
-
-    function renderCalendar(){
-      monthLabel.textContent = monthNames[viewDate.getMonth()] + ' ' + viewDate.getFullYear();
-      calGrid.innerHTML = '';
-
-      const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
-      // Lundi = 0 ... Dimanche = 6
-      let startOffset = (firstDay.getDay() + 6) % 7;
-      const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
-
-      for(let i = 0; i < startOffset; i++){
-        const empty = document.createElement('div');
-        empty.className = 'cal-cell empty';
-        calGrid.appendChild(empty);
+  // Suivi GA4 : clic sur un CTA de contact (n'importe quel bouton "Parler d'un projet" / lien vers Contact)
+  document.querySelectorAll('a[href="contact.html"], a[href="#contact"], .cta-btn').forEach(el => {
+    el.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'clic_contact', { 'event_category': 'engagement', 'lien': el.textContent.trim() });
       }
+    });
+  });
 
-      for(let d = 1; d <= daysInMonth; d++){
-        const cellDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), d);
-        const cell = document.createElement('div');
-        cell.textContent = d;
-        const isWeekend = cellDate.getDay() === 0 || cellDate.getDay() === 6;
-        const isPast = cellDate < today;
-
-        if(isWeekend || isPast){
-          cell.className = 'cal-cell disabled';
-        } else {
-          cell.className = 'cal-cell available';
-          if(selectedDate && cellDate.getTime() === selectedDate.getTime()){
-            cell.className = 'cal-cell selected';
-          }
-          cell.addEventListener('click', () => {
-            selectedDate = cellDate;
-            selectedSlot = null;
-            renderCalendar();
-            renderSlots();
-          });
+  // Suivi GA4 : interactions avec le widget Calendly (affichage + rendez-vous confirmé)
+  window.addEventListener('message', (e) => {
+    if (e.origin === 'https://calendly.com' && e.data.event) {
+      if (typeof gtag === 'function') {
+        if (e.data.event === 'calendly.event_scheduled') {
+          gtag('event', 'clic_calendly', { 'event_category': 'conversion', 'detail': 'rdv_confirme' });
+        } else if (e.data.event === 'calendly.profile_page_viewed' || e.data.event === 'calendly.event_type_viewed') {
+          gtag('event', 'clic_calendly', { 'event_category': 'engagement', 'detail': 'calendrier_ouvert' });
         }
-        calGrid.appendChild(cell);
       }
     }
+  });
 
-    function renderSlots(){
-      if(!selectedDate){
-        slotsLabel.textContent = 'Sélectionnez une date dans le calendrier';
-        slotsGrid.innerHTML = '';
-        rdvConfirm.classList.remove('show');
-        return;
-      }
-      const dateStr = selectedDate.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
-      slotsLabel.textContent = 'Créneaux disponibles le ' + dateStr;
-      slotsGrid.innerHTML = '';
-      slots.forEach(s => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'slot-btn' + (selectedSlot === s ? ' selected' : '');
-        btn.textContent = s;
-        btn.addEventListener('click', () => {
-          selectedSlot = s;
-          renderSlots();
-          rdvConfirm.classList.add('show');
+  (function(){
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if(burger && navLinks){
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        burger.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          burger.classList.remove('active');
         });
-        slotsGrid.appendChild(btn);
       });
     }
-
-    document.getElementById('prevMonth').addEventListener('click', () => {
-      viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
-      renderCalendar();
-    });
-    document.getElementById('nextMonth').addEventListener('click', () => {
-      viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
-      renderCalendar();
-    });
-
-    document.getElementById('rdvSubmit').addEventListener('click', () => {
-      const name = document.getElementById('rdvName').value.trim();
-      const email = document.getElementById('rdvEmail').value.trim();
-      if(!name || !email || !selectedDate || !selectedSlot){
-        return;
-      }
-      const dateStr = selectedDate.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
-      rdvSuccessDate.textContent = dateStr + ' à ' + selectedSlot;
-      rdvConfirm.classList.remove('show');
-      rdvSuccess.classList.add('show');
-    });
-
-    renderCalendar();
-    renderSlots();
   })();
 </script>
 

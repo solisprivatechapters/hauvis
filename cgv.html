@@ -4,17 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CGV — HAUVIS</title>
-<meta name="description" content="Conditions Générales de Vente des prestations de l'agence HAUVIS.">
+<meta name="description" content="Conditions Générales de Vente des prestations du studio HAUVIS.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:title" content="CGV — HAUVIS">
-<meta property="og:description" content="Conditions Générales de Vente des prestations de l'agence HAUVIS.">
+<meta property="og:description" content="Conditions Générales de Vente des prestations du studio HAUVIS.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
+<!-- GOOGLE ANALYTICS 4 — remplacer G-XXXXXXXXXX par l'ID de mesure une fois la propriété créée -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--noir:#0B0B0C;--ivoire:#F5F3EF;--or:#C9A664;--or-clair:#DEC38B;--anthracite:#3A3A3D;--pierre:#E4DED2;}
+  :root{--noir:#0A0A0A;--ivoire:#F4F1EA;--or:#C6A46A;--or-clair:#DEC38B;--anthracite:#333333;--pierre:#D8D1C4;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{font-family:'Inter',sans-serif;background:var(--ivoire);color:var(--noir);-webkit-font-smoothing:antialiased;}
@@ -32,8 +40,28 @@
   .nav-links a:hover{opacity:1;}
   .cta-btn{background:var(--or);color:var(--noir);padding:11px 24px;font-size:12.5px;letter-spacing:0.04em;font-weight:500;border:1px solid var(--or);transition:background .25s, color .25s;white-space:nowrap;}
   .cta-btn:hover{background:transparent;color:var(--or);}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:14px 10px;margin:-14px -10px;}
   .burger span{width:22px;height:1px;background:var(--ivoire);}
+  .nav-links.mobile-open{
+    display:flex !important;flex-direction:column;align-items:flex-start;gap:0;
+    position:fixed;top:64px;left:0;right:0;z-index:150;
+    background:var(--noir);padding:8px 40px 24px;
+    border-bottom:1px solid rgba(201,166,100,0.18);
+    max-height:calc(100vh - 64px);overflow-y:auto;
+  }
+  .nav-links.mobile-open a{padding:14px 0;width:100%;border-bottom:1px solid rgba(245,243,239,0.08);opacity:0.9;}
+  .nav-links.mobile-open .has-drop{width:100%;}
+  .nav-links.mobile-open .dropdown{
+    position:static;opacity:1;visibility:visible;transform:none;
+    background:transparent;border:none;padding:0 0 0 16px;margin-top:0;min-width:0;
+  }
+  .nav-links.mobile-open .dropdown a{border-bottom:none;padding:10px 0;font-size:12px;opacity:0.7;}
+  .burger span{transition:transform .25s ease, opacity .25s ease;}
+  .burger.active span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .burger.active span:nth-child(2){opacity:0;}
+  .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:640px){.nav-links.mobile-open{padding:8px 24px 24px;}}
+
   @media(max-width:900px){.nav-links{display:none;}.burger{display:flex;}}
 
   main{padding-top:110px;}
@@ -61,20 +89,33 @@
   .legal-section a.inline-link{color:var(--or); border-bottom:1px solid var(--or);}
   .fill{background:rgba(201,166,100,0.18); color:var(--noir); padding:1px 6px; font-weight:500; border-radius:2px;}
 
-  footer{background:var(--noir);color:rgba(245,243,239,0.6);padding:50px 0;border-top:1px solid rgba(201,166,100,0.15);text-align:center;font-size:11.5px;}
+  footer{background:var(--noir);color:rgba(245,243,239,0.6);padding-top:70px;border-top:1px solid rgba(201,166,100,0.15);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;}
+  @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  .footer-grid h5{color:var(--ivoire);font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;font-weight:500;}
+  .footer-grid a, .footer-grid p{display:block;font-size:13px;margin-bottom:12px;color:rgba(245,243,239,0.55);}
+  .footer-grid a:hover{color:var(--or-clair);}
+  .footer-logo{font-family:'Fraunces',serif;font-size:20px;letter-spacing:0.1em;color:var(--ivoire);margin-bottom:16px;}
+  .footer-bottom{
+    border-top:1px solid rgba(245,243,239,0.1);padding:24px 0;
+    display:flex;justify-content:space-between;font-size:11.5px;flex-wrap:wrap;gap:10px;
+  }
+  .logo-block{display:flex;flex-direction:column;line-height:1.1;}
+  .tagline{font-size:8.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--or-clair);margin-top:4px;font-family:'Inter',sans-serif;font-weight:400;}
+  @media(max-width:900px){.tagline{display:none;}}
 </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a>
+  <div class="logo-block"><a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a><span class="tagline">Visual Strategy Studio</span></div>
   <nav>
     <div class="nav-links">
       <a href="index.html">Accueil</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
+      <a href="portfolio.html">Réalisations</a>
+      <a href="contact.html">Parler d\'un projet</a>
     </div>
-    <a href="contact.html" class="cta-btn">Demander un devis</a>
+    <a href="contact.html" class="cta-btn">Parler d'un projet</a>
     <div class="burger"><span></span><span></span><span></span></div>
   </nav>
 </header>
@@ -83,99 +124,159 @@
   <section class="legal-hero wrap">
     <div class="eyebrow">Informations légales</div>
     <h1>Conditions Générales de Vente</h1>
-    <p>Applicables à toute prestation de photographie, vidéo, prise de vues aériennes ou gestion de réseaux sociaux réalisée par HAUVIS.</p>
-
-    <div class="notice-box">
-      <strong>Note pour Manelya :</strong> ce document reprend les modalités déjà définies sur le site (délais, acompte, conditions météo drone...) et les met en forme juridique standard. Comme pour les mentions légales, je ne suis pas juriste — pour une activité impliquant cession de droits d'auteur et prestations B2B/B2C mixtes, une relecture par un professionnel est recommandée avant publication. Il ne manque que ton <strong>nom et prénom</strong> (surligné en doré) pour être complet.
-    </div>
+    <p>Applicables à toute prestation de photographie, vidéo, prise de vues aériennes par drone et création de contenus réalisée par HAUVIS pour ses clients professionnels et particuliers.</p>
 
     <div class="toc">
       <a href="#objet">1. Objet</a>
-      <a href="#devis">2. Devis &amp; commande</a>
-      <a href="#prix">3. Prix &amp; paiement</a>
-      <a href="#delais">4. Délais</a>
-      <a href="#annulation">5. Annulation &amp; report</a>
-      <a href="#droits">6. Droits d'utilisation</a>
-      <a href="#propriete">7. Propriété intellectuelle</a>
-      <a href="#drone">8. Prises de vues aériennes</a>
-      <a href="#responsabilite">9. Responsabilité</a>
-      <a href="#litiges">10. Litiges</a>
+      <a href="#reservation">2. Réservation &amp; validation</a>
+      <a href="#reglement">3. Conditions de règlement</a>
+      <a href="#delais">4. Délais de livraison</a>
+      <a href="#deplacements">5. Déplacements</a>
+      <a href="#meteo">6. Météo &amp; drone</a>
+      <a href="#livraison">7. Livraison &amp; fichiers</a>
+      <a href="#droits">8. Droits d'utilisation</a>
+      <a href="#annulation">9. Annulation &amp; report</a>
+      <a href="#client">10. Responsabilité du client</a>
+      <a href="#litiges">11. Litiges</a>
     </div>
 
     <div class="legal-section" id="objet">
       <h2>1. Objet</h2>
-      <p>Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre HAUVIS, <span class="fill">[Nom et prénom]</span>, Entreprise individuelle, SIRET 839 972 015 00045, dont le siège est situé Rue Carrughju di Zucculana, 20620 Biguglia (ci-après « HAUVIS »), et toute personne physique ou morale (ci-après « le Client ») souhaitant faire appel à ses services de photographie, vidéo, prise de vues aériennes par drone, suivi de chantier, création de contenus de marque ou gestion de réseaux sociaux.</p>
-      <p>Toute commande de prestation implique l'acceptation sans réserve des présentes CGV par le Client.</p>
+      <p>Les présentes conditions générales de vente définissent les modalités selon lesquelles HAUVIS (EL KHAYER AMIRA, Entreprise individuelle, SIRET 839 972 015 00045, siège social Rue Carrughju di Zucculana, 20620 Biguglia) réalise des prestations de création de contenus visuels comprenant notamment la photographie, la vidéo, les prises de vues aériennes par drone et la production de contenus destinés aux professionnels et particuliers.</p>
     </div>
 
-    <div class="legal-section" id="devis">
-      <h2>2. Devis &amp; commande</h2>
-      <p>Toute prestation fait l'objet d'un devis préalable, établi sur la base des informations transmises par le Client (type de bien ou d'établissement, formule souhaitée, localisation, date).</p>
-      <p>Le devis est valable 30 jours à compter de sa date d'émission. La commande est considérée comme ferme à réception de l'acceptation écrite du devis par le Client (retour signé, email de confirmation, ou validation du formulaire de réservation en ligne).</p>
+    <div class="legal-section" id="reservation">
+      <h2>2. Réservation et validation de prestation</h2>
+      <p>Toute réservation devient définitive après :</p>
+      <ul>
+        <li>validation du devis,</li>
+        <li>acceptation des présentes conditions générales de vente,</li>
+        <li>versement d'un acompte de 50 % du montant total de la prestation.</li>
+      </ul>
+      <p>Cet acompte constitue un engagement ferme des deux parties.</p>
     </div>
 
-    <div class="legal-section" id="prix">
-      <h2>3. Prix &amp; modalités de paiement</h2>
-      <p>Les tarifs indiqués sur le site et dans les devis sont exprimés en euros, hors taxes (HT). La TVA applicable est ajoutée sur la facture finale, HAUVIS étant assujetti à la TVA.</p>
-      <h3>Acompte</h3>
-      <p>Un acompte de <span class="fill">[30 à 50%, à définir]</span> du montant total est demandé à la confirmation du devis pour valider la réservation du créneau. Le solde est dû à la livraison des contenus finaux.</p>
-      <h3>Moyens de paiement</h3>
-      <p><span class="fill">[Virement bancaire / carte bancaire / autre — à préciser]</span></p>
-      <h3>Retard de paiement</h3>
-      <p>Conformément à l'article L441-10 du Code de commerce, tout retard de paiement entraîne l'application de pénalités calculées au taux d'intérêt appliqué par la Banque Centrale Européenne majoré de 10 points, ainsi qu'une indemnité forfaitaire de 40€ pour frais de recouvrement.</p>
+    <div class="legal-section" id="reglement">
+      <h2>3. Conditions de règlement</h2>
+      <p>Le règlement peut être effectué par :</p>
+      <ul>
+        <li>virement bancaire,</li>
+        <li>carte bancaire,</li>
+        <li>espèces.</li>
+      </ul>
+      <p>Le solde de 50 % est payable avant la livraison finale des fichiers et contenus réalisés. La livraison des contenus définitifs intervient uniquement après règlement complet de la prestation.</p>
     </div>
 
     <div class="legal-section" id="delais">
       <h2>4. Délais de livraison</h2>
-      <p>Les délais de livraison indiqués sur chaque formule (généralement entre 48h et 4 jours ouvrés selon la prestation) courent à compter de la date de la séance ou du dernier passage, sous réserve de la réception complète des éventuels éléments nécessaires de la part du Client.</p>
-      <p>Ces délais sont donnés à titre indicatif et ne constituent pas un engagement de résultat en cas de circonstances exceptionnelles (volume de commandes, incident technique, force majeure).</p>
+      <p>Les délais indicatifs sont :</p>
+      <table class="data-table">
+        <tr><th>Immobilier premium</th><td>Généralement sous 48 heures selon la prestation</td></tr>
+        <tr><th>Hôtellerie &amp; Restaurant</th><td>2 à 5 jours ouvrés en moyenne</td></tr>
+        <tr><th>Suivi de chantier &amp; drone</th><td>2 à 5 jours ouvrés en moyenne</td></tr>
+        <tr><th>Projets spécifiques ou complexes</th><td>Délai défini sur devis</td></tr>
+      </table>
+      <p>Les délais peuvent évoluer selon la complexité du projet, le volume de contenus, les conditions météorologiques ou les contraintes liées au lieu de réalisation.</p>
     </div>
 
-    <div class="legal-section" id="annulation">
-      <h2>5. Annulation &amp; report</h2>
-      <p>Le Client peut annuler ou reporter une prestation sans frais sous réserve d'un délai de prévenance de 48 heures minimum avant la date prévue.</p>
-      <p>En cas d'annulation moins de 48 heures avant la prestation, l'acompte versé reste acquis à HAUVIS, sauf cas de force majeure dûment justifié.</p>
-      <p>Pour les prestations extérieures ou par drone, en cas de conditions météorologiques rendant l'intervention impossible ou dangereuse (pluie, vent fort), la séance est reprogrammée sans frais supplémentaires, à une date convenue entre les parties.</p>
+    <div class="legal-section" id="deplacements">
+      <h2>5. Déplacements</h2>
+      <p>HAUVIS intervient dans toute la France. Des frais de déplacement peuvent être appliqués au-delà d'un rayon de 45 km autour du lieu d'intervention. Les éventuels frais supplémentaires sont indiqués clairement sur le devis avant validation.</p>
+    </div>
+
+    <div class="legal-section" id="meteo">
+      <h2>6. Conditions météorologiques et drone</h2>
+      <p>Les prestations comprenant des prises de vues aériennes peuvent être reportées en cas de conditions météorologiques incompatibles avec la sécurité du vol ou la réglementation applicable. Un report sera proposé selon les disponibilités de HAUVIS et du client.</p>
+    </div>
+
+    <div class="legal-section" id="livraison">
+      <h2>7. Livraison et fichiers</h2>
+      <p>Les contenus sont livrés sous format numérique selon les modalités prévues dans le devis. Les fichiers sources, fichiers RAW ou éléments de production intermédiaires ne sont pas inclus sauf mention contraire.</p>
     </div>
 
     <div class="legal-section" id="droits">
-      <h2>6. Droits d'utilisation des contenus livrés</h2>
-      <p>Sauf mention contraire prévue au devis, HAUVIS cède au Client un droit d'utilisation des photographies et vidéos livrées, limité aux finalités suivantes :</p>
-      <ul>
-        <li>Diffusion sur les supports de communication du Client en lien avec le bien, l'établissement ou la marque photographié(e) (site web, réseaux sociaux, annonces, supports commerciaux)</li>
-        <li>Usage non exclusif et non cessible à un tiers sans accord préalable de HAUVIS</li>
-      </ul>
-      <p>Toute utilisation à d'autres fins que celles prévues au devis (notamment usage publicitaire tiers, revente, ou modification substantielle des visuels) doit faire l'objet d'un accord écrit préalable et peut donner lieu à une facturation complémentaire.</p>
+      <h2>8. Droits d'utilisation</h2>
+      <p>Les droits d'utilisation des photographies et vidéos sont définis selon l'usage prévu au devis. Toute utilisation commerciale, publicitaire ou diffusion sur des supports non prévus initialement devra faire l'objet d'un accord complémentaire.</p>
+      <p>HAUVIS conserve un droit de présentation de ses réalisations dans le cadre de sa communication professionnelle, sauf demande contraire écrite du client.</p>
     </div>
 
-    <div class="legal-section" id="propriete">
-      <h2>7. Propriété intellectuelle</h2>
-      <p>Conformément au Code de la propriété intellectuelle, HAUVIS reste titulaire des droits d'auteur sur l'ensemble des photographies et vidéos qu'il produit, y compris après livraison au Client. La livraison des fichiers au Client emporte cession d'un droit d'usage tel que défini à l'article 6, et non cession de la propriété intellectuelle elle-même.</p>
-      <p>HAUVIS se réserve le droit d'utiliser les contenus produits à des fins de communication et de portfolio (site web, réseaux sociaux, book), sauf demande explicite de confidentialité formulée par le Client au moment de la commande.</p>
+    <div class="legal-section" id="annulation">
+      <h2>9. Annulation et report</h2>
+      <p>Toute annulation par le client après réservation peut entraîner la conservation de l'acompte afin de couvrir la préparation et la réservation du créneau. En cas de report, HAUVIS étudiera la possibilité de proposer une nouvelle date selon ses disponibilités.</p>
     </div>
 
-    <div class="legal-section" id="drone">
-      <h2>8. Prises de vues aériennes par drone</h2>
-      <p>Les prises de vues par drone sont réalisées dans le respect de la réglementation de la Direction Générale de l'Aviation Civile (DGAC) en vigueur. HAUVIS vérifie systématiquement les zones de vol autorisées et obtient, le cas échéant, les autorisations nécessaires avant chaque intervention.</p>
-      <p>Si une zone s'avère non autorisée au vol au moment de l'intervention (zone réglementée, proximité d'un aéroport, événement particulier), HAUVIS se réserve le droit d'annuler la prestation aérienne sans que sa responsabilité ne puisse être engagée, une solution alternative étant proposée au Client.</p>
-    </div>
-
-    <div class="legal-section" id="responsabilite">
-      <h2>9. Responsabilité</h2>
-      <p>HAUVIS met en œuvre tous les moyens nécessaires à la bonne exécution des prestations commandées. Sa responsabilité ne saurait être engagée en cas d'inexécution ou de mauvaise exécution due au fait du Client (accès non fourni, informations erronées ou incomplètes) ou à un cas de force majeure.</p>
-      <p>HAUVIS ne saurait être tenu responsable de l'usage fait par le Client des contenus livrés, ni des conséquences commerciales liées à leur diffusion.</p>
+    <div class="legal-section" id="client">
+      <h2>10. Responsabilité du client</h2>
+      <p>Le client s'engage à fournir toutes les informations nécessaires au bon déroulement de la prestation et à garantir l'accès aux lieux concernés. Pour les biens immobiliers, établissements ou chantiers, le client doit assurer que les autorisations nécessaires sont obtenues.</p>
     </div>
 
     <div class="legal-section" id="litiges">
-      <h2>10. Litiges &amp; droit applicable</h2>
-      <p>Les présentes CGV sont soumises au droit français. En cas de litige, une solution amiable sera recherchée en priorité entre les parties.</p>
-      <p>À défaut de résolution amiable, tout litige relève de la compétence des tribunaux du ressort du siège social de HAUVIS, sauf disposition légale impérative contraire applicable aux consommateurs.</p>
-      <p>Conformément aux articles L.616-1 et R.616-1 du Code de la consommation, le Client consommateur peut recourir gratuitement au service de médiation <span class="fill">[nom du médiateur de la consommation à désigner]</span>.</p>
+      <h2>11. Litiges</h2>
+      <p>Les présentes conditions sont soumises au droit français. En cas de litige, les parties rechercheront prioritairement une solution amiable avant toute procédure.</p>
+      <p>Conformément aux articles L.616-1 et R.616-1 du Code de la consommation, le client consommateur peut recourir gratuitement au médiateur de la consommation désigné par HAUVIS : Centre Multiprofessionnel de Médiations, 35 Bd Paoli, 20200 Bastia. Voir également les <a href="mentions-legales.html#mediation" class="inline-link">mentions légales</a>.</p>
     </div>
   </section>
 </main>
 
-<footer>HAUVIS — Conditions Générales de Vente.</footer>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">HAU<span style="color:var(--or)">V</span>IS</div>
+        <p>Studio de stratégie visuelle premium — Immobilier, Chantier et Hôtellerie-Restaurant.</p>
+      </div>
+      <div>
+        <h5>Prestations</h5>
+        <a href="immobilier.html">Immobilier</a>
+        <a href="food.html">Hôtellerie &amp; Restaurant</a>
+        <a href="chantier.html">Suivi de chantier &amp; drone</a>
+      </div>
+      <div>
+        <h5>Entreprise</h5>
+        <a href="portfolio.html">Réalisations</a>
+        <a href="about.html">À propos</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="mailto:contact.hauvis@gmail.com">contact.hauvis@gmail.com</a>
+        <a href="tel:+33650113238">06 50 11 32 38</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HAUVIS — Tous droits réservés</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#donnees">Politique de confidentialité</a> · <a href="cgv.html">CGV</a></span>
+    </div>
+  </div>
+</footer>
 
+
+<script>
+  // Suivi GA4 : clic sur un CTA de contact (n'importe quel bouton "Parler d'un projet" / lien vers Contact)
+  document.querySelectorAll('a[href="contact.html"], a[href="#contact"], .cta-btn').forEach(el => {
+    el.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'clic_contact', { 'event_category': 'engagement', 'lien': el.textContent.trim() });
+      }
+    });
+  });
+
+  (function(){
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if(burger && navLinks){
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        burger.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          burger.classList.remove('active');
+        });
+      });
+    }
+  })();
+</script>
 </body>
 </html>

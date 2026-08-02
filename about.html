@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — HAUVIS</title>
+<meta name="description" content="HAUVIS est le partenaire image des entreprises de l'immobilier, de la construction et de l'hôtellerie-restauration. Basée dans le Sud de la France, le studio accompagne ses clients partout en France.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:title" content="À propos — HAUVIS">
+<meta property="og:description" content="HAUVIS est le partenaire image des entreprises de l'immobilier, de la construction et de l'hôtellerie-restauration.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<!-- GOOGLE ANALYTICS 4 — remplacer G-XXXXXXXXXX par l'ID de mesure une fois la propriété créée -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--noir:#0A0A0A;--ivoire:#F4F1EA;--or:#C6A46A;--or-clair:#DEC38B;--anthracite:#333333;--pierre:#D8D1C4;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--ivoire);color:var(--noir);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-0.01em;}
+  a{text-decoration:none;color:inherit;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+  @media(max-width:640px){.wrap{padding:0 24px;}}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(11,11,12,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,166,100,0.15);}
+  .logo{font-family:'Fraunces',serif;font-size:22px;letter-spacing:0.14em;color:var(--ivoire);display:flex;align-items:baseline;gap:1px;}
+  .logo .v-mark{display:inline-block;transform:translateY(1px) skewY(-6deg);color:var(--or);}
+  nav{display:flex;align-items:center;gap:40px;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{color:var(--ivoire);font-size:13px;letter-spacing:0.04em;opacity:0.85;transition:opacity .25s;padding:6px 0;}
+  .nav-links a.current{opacity:1;border-bottom:1px solid var(--or);}
+  .nav-links a:hover{opacity:1;}
+  .has-drop{position:relative;}
+  .dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--noir);border:1px solid rgba(201,166,100,0.2);min-width:220px;padding:10px 0;margin-top:14px;opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:all .25s ease;}
+  .has-drop:hover .dropdown{opacity:1;visibility:visible;transform:translate(-50%,0);}
+  .dropdown a{display:block;padding:11px 22px;font-size:12.5px;opacity:0.8;}
+  .dropdown a:hover{opacity:1;background:rgba(201,166,100,0.08);}
+  .cta-btn{background:var(--or);color:var(--noir);padding:11px 24px;font-size:12.5px;letter-spacing:0.04em;font-weight:500;border:1px solid var(--or);transition:background .25s, color .25s;white-space:nowrap;}
+  .cta-btn:hover{background:transparent;color:var(--or);}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:14px 10px;margin:-14px -10px;}
+  .burger span{width:22px;height:1px;background:var(--ivoire);}
+  .nav-links.mobile-open{
+    display:flex !important;flex-direction:column;align-items:flex-start;gap:0;
+    position:fixed;top:64px;left:0;right:0;z-index:150;
+    background:var(--noir);padding:8px 40px 24px;
+    border-bottom:1px solid rgba(201,166,100,0.18);
+    max-height:calc(100vh - 64px);overflow-y:auto;
+  }
+  .nav-links.mobile-open a{padding:14px 0;width:100%;border-bottom:1px solid rgba(245,243,239,0.08);opacity:0.9;}
+  .nav-links.mobile-open .has-drop{width:100%;}
+  .nav-links.mobile-open .dropdown{
+    position:static;opacity:1;visibility:visible;transform:none;
+    background:transparent;border:none;padding:0 0 0 16px;margin-top:0;min-width:0;
+  }
+  .nav-links.mobile-open .dropdown a{border-bottom:none;padding:10px 0;font-size:12px;opacity:0.7;}
+  .burger span{transition:transform .25s ease, opacity .25s ease;}
+  .burger.active span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .burger.active span:nth-child(2){opacity:0;}
+  .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:640px){.nav-links.mobile-open{padding:8px 24px 24px;}}
+
+  @media(max-width:900px){.nav-links{display:none;}.burger{display:flex;}}
+
+  .hero{height:72vh;min-height:460px;position:relative;display:flex;align-items:flex-end;background:var(--noir);overflow:hidden;}
+  .hero-media{position:absolute;inset:0;}
+  .hero-media img{opacity:0.5;}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(11,11,12,0.3) 0%, rgba(11,11,12,0.2) 40%, rgba(11,11,12,0.95) 100%);}
+  .hero-content{position:relative;z-index:2;color:var(--ivoire);padding:0 40px 60px;width:100%;}
+  .hero-eyebrow{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--or-clair);margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+  .hero-eyebrow::before{content:"";width:36px;height:1px;background:var(--or);}
+  .hero h1{font-size:clamp(30px,5vw,54px);line-height:1.1;font-weight:400;max-width:760px;}
+
+  section{padding:100px 0;}
+  @media(max-width:640px){section{padding:64px 0;}}
+  .eyebrow{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--or);margin-bottom:18px;font-weight:500;}
+  .section-head{max-width:680px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(24px,3vw,36px);line-height:1.18;}
+  .section-head p{color:var(--anthracite);margin-top:16px;font-size:15px;line-height:1.75;max-width:600px;}
+
+  /* Fondateur */
+  .fondateur-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:center;}
+  @media(max-width:800px){.fondateur-grid{grid-template-columns:1fr;gap:36px;}}
+  .fondateur-media{aspect-ratio:4/5;overflow:hidden;background:var(--pierre);}
+  .fondateur-text p{font-size:15px;line-height:1.8;color:var(--anthracite);margin-bottom:16px;}
+  .fondateur-text .signature{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:var(--noir);margin-top:20px;}
+
+  /* Mission */
+  .mission-band{background:var(--noir);color:var(--ivoire);text-align:center;padding:90px 0;}
+  .mission-band p{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(22px,3vw,32px);line-height:1.5;max-width:820px;margin:0 auto;}
+  .mission-band .sign{margin-top:26px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--or-clair);font-family:'Inter',sans-serif;}
+
+  /* Poles */
+  .poles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:800px){.poles-grid{grid-template-columns:1fr;}}
+  .pole-card{border:1px solid var(--pierre);padding:36px 30px;}
+  .pole-card .pole-eyebrow{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--or);margin-bottom:10px;}
+  .pole-card h3{font-size:19px;margin-bottom:12px;}
+  .pole-card p{font-size:13.5px;color:var(--anthracite);line-height:1.65;}
+
+  /* Valeurs */
+  .valeurs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--anthracite);}
+  @media(max-width:800px){.valeurs-grid{grid-template-columns:repeat(2,1fr);}}
+  .valeur-item{background:var(--ivoire);padding:30px 24px;}
+  .valeur-item .num{font-family:'Fraunces',serif;font-style:italic;color:var(--or);font-size:14px;margin-bottom:10px;display:block;}
+  .valeur-item h4{font-size:15px;font-weight:500;margin-bottom:8px;}
+  .valeur-item p{font-size:12.5px;color:var(--anthracite);line-height:1.55;}
+
+  /* Zone nationale */
+  .national-band{background:var(--pierre);padding:70px 0;text-align:center;}
+  .national-band h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:16px;max-width:700px;margin-left:auto;margin-right:auto;}
+  .national-band p{font-size:14.5px;color:var(--anthracite);max-width:600px;margin:0 auto;line-height:1.7;}
+  .national-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px;}
+  .national-tag{font-size:12.5px;color:var(--anthracite);border:1px solid var(--anthracite);padding:8px 16px;}
+  .national-tag.highlight{background:var(--noir);color:var(--or-clair);border-color:var(--noir);}
+
+  .final{background:var(--noir);color:var(--ivoire);padding:90px 0;text-align:center;}
+  .final h2{font-size:clamp(24px,3vw,36px);margin-bottom:24px;}
+  .final .btn-solid{background:var(--or);color:var(--noir);padding:15px 34px;font-size:13px;letter-spacing:0.04em;font-weight:500;display:inline-block;transition:background .25s;margin:0 8px;}
+  .final .btn-solid:hover{background:var(--or-clair);}
+  .final .btn-outline{border:1px solid rgba(245,243,239,0.4);color:var(--ivoire);padding:15px 34px;font-size:13px;letter-spacing:0.03em;display:inline-block;margin:0 8px;transition:border-color .25s;}
+  .final .btn-outline:hover{border-color:var(--or);}
+
+  footer{background:var(--noir);color:rgba(245,243,239,0.6);padding-top:70px;border-top:1px solid rgba(201,166,100,0.15);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;}
+  @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  .footer-grid h5{color:var(--ivoire);font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;font-weight:500;}
+  .footer-grid a, .footer-grid p{display:block;font-size:13px;margin-bottom:12px;color:rgba(245,243,239,0.55);}
+  .footer-grid a:hover{color:var(--or-clair);}
+  .footer-logo{font-family:'Fraunces',serif;font-size:20px;letter-spacing:0.1em;color:var(--ivoire);margin-bottom:16px;}
+  .footer-bottom{
+    border-top:1px solid rgba(245,243,239,0.1);padding:24px 0;
+    display:flex;justify-content:space-between;font-size:11.5px;flex-wrap:wrap;gap:10px;
+  }
+  .logo-block{display:flex;flex-direction:column;line-height:1.1;}
+  .tagline{font-size:8.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--or-clair);margin-top:4px;font-family:'Inter',sans-serif;font-weight:400;}
+  @media(max-width:900px){.tagline{display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-block"><a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a><span class="tagline">Visual Strategy Studio</span></div>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="has-drop">
+        <a href="#">Expertises ▾</a>
+        <div class="dropdown">
+          <a href="immobilier.html">Immobilier premium</a>
+          <a href="chantier.html">Suivi de chantier &amp; drone</a>
+          <a href="food.html">Hôtellerie &amp; Restaurant</a>
+        </div>
+      </div>
+      <a href="portfolio.html">Réalisations</a>
+      <a href="about.html" class="current">À propos</a>
+      <a href="process.html">Process</a>
+      <a href="contact.html">Parler d\'un projet</a>
+    </div>
+    <a href="contact.html" class="cta-btn">Parler d'un projet</a>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1800&auto=format&fit=crop" alt="HAUVIS, studio de stratégie visuelle premium">
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">À propos</div>
+    <h1>Le partenaire image des entreprises qui valorisent leurs lieux et leurs projets.</h1>
+  </div>
+</section>
+
+<!-- FONDATEUR -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">La fondatrice</div>
+    <div class="fondateur-grid">
+      <div class="fondateur-media">
+        <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=800&auto=format&fit=crop" alt="Manelya, fondatrice de HAUVIS">
+      </div>
+      <div class="fondateur-text">
+        <p>HAUVIS est née d'un constat simple : la valeur réelle d'un bien, d'un projet ou d'un établissement ne suffit pas — encore faut-il savoir la montrer. Trop de biens d'exception, de chantiers ambitieux et d'adresses remarquables restent sous-estimés faute d'une image à la hauteur de ce qu'ils sont réellement.</p>
+        <p>Fondée par Manelya, HAUVIS s'est construite avec une conviction : l'image n'est pas une dépense de communication, c'est un investissement qui accélère une vente, rassure un investisseur, ou donne envie de réserver une table. Chaque prestation HAUVIS est pensée pour ce résultat précis — pas pour remplir une galerie.</p>
+        <p>Basée dans le Sud de la France, HAUVIS a pour ambition de devenir une référence nationale de la création de contenus visuels pour l'immobilier, la construction et l'hôtellerie-restauration.</p>
+        <div class="signature">— Manelya, fondatrice de HAUVIS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission-band">
+  <div class="wrap">
+    <p>« Valoriser les lieux, les projets et les expériences à travers une image premium. »</p>
+    <div class="sign">La mission HAUVIS</div>
+  </div>
+</section>
+
+<!-- ORGANISATION EN 3 POLES -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Notre organisation</div>
+    <div class="section-head">
+      <h2>Un seul studio, trois expertises dédiées.</h2>
+      <p>HAUVIS n'est pas uniquement une agence immobilière. L'immobilier est aujourd'hui notre priorité commerciale, mais notre vision couvre naturellement les villas, hôtels, restaurants, domaines et projets architecturaux — tout lieu ou projet qui mérite d'être valorisé par l'image.</p>
+    </div>
+    <div class="poles-grid">
+      <div class="pole-card">
+        <h3>Immobilier premium</h3>
+        <p>Agences, promoteurs, mandataires et conciergeries — pour vendre et louer plus efficacement grâce à une image qui reflète la vraie valeur des biens.</p>
+      </div>
+      <div class="pole-card">
+        <h3>Suivi de chantier &amp; drone</h3>
+        <p>Promoteurs, architectes et entreprises BTP — pour documenter, communiquer et valoriser l'avancement des projets dans la durée.</p>
+      </div>
+      <div class="pole-card">
+        <h3>Hôtellerie &amp; Restaurant</h3>
+        <p>Restaurants, hôtels, traiteurs et lieux événementiels — pour donner envie de réserver et renforcer l'image de chaque établissement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="eyebrow">Nos valeurs</div>
+    <div class="section-head"><h2>Ce qui guide chaque projet HAUVIS.</h2></div>
+  </div>
+  <div class="valeurs-grid">
+    <div class="valeur-item"><span class="num">01</span><h4>Excellence</h4><p>Aucun livrable ne sort sans validation esthétique et technique interne.</p></div>
+    <div class="valeur-item"><span class="num">02</span><h4>Élégance</h4><p>Sobriété des compositions, absence d'effets superflus.</p></div>
+    <div class="valeur-item"><span class="num">03</span><h4>Authenticité</h4><p>On sublime la réalité, on ne la dénature jamais.</p></div>
+    <div class="valeur-item"><span class="num">04</span><h4>Rigueur</h4><p>Cadrage, lumière, retouche : un standard non négociable.</p></div>
+    <div class="valeur-item"><span class="num">05</span><h4>Confiance</h4><p>Délais tenus, communication claire, transparence sur les tarifs.</p></div>
+    <div class="valeur-item"><span class="num">06</span><h4>Créativité</h4><p>Une direction artistique propre à chaque client, jamais de gabarit générique.</p></div>
+  </div>
+</section>
+
+<!-- DIMENSION NATIONALE -->
+<section class="national-band">
+  <div class="wrap">
+    <h2>Basée dans le Sud de la France, HAUVIS accompagne ses clients partout en France.</h2>
+    <p>Notre ancrage se construit dans le Sud — Marseille, Aix-en-Provence, Toulon, avec une montée en gamme progressive vers la Côte d'Azur. Paris reste une capacité d'intervention stratégique : nous nous y déplaçons régulièrement pour des projets à forte valeur, sans que ce soit notre implantation principale.</p>
+    <div class="national-tags">
+      <span class="national-tag highlight">Marseille</span>
+      <span class="national-tag highlight">Aix-en-Provence</span>
+      <span class="national-tag highlight">Toulon</span>
+      <span class="national-tag">Nice &amp; Côte d'Azur</span>
+      <span class="national-tag">Monaco</span>
+      <span class="national-tag">Paris</span>
+      <span class="national-tag">Toulouse</span>
+      <span class="national-tag">Montpellier</span>
+      <span class="national-tag">Bastia</span>
+      <span class="national-tag">Ajaccio</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final">
+  <div class="wrap">
+    <h2>Envie de construire votre image avec HAUVIS ?</h2>
+    <a href="contact.html" class="btn-solid">Parler d'un projet</a>
+    <a href="process.html" class="btn-outline">Découvrir notre méthode</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">HAU<span style="color:var(--or)">V</span>IS</div>
+        <p>Studio de stratégie visuelle premium — Immobilier, Chantier et Hôtellerie-Restaurant.</p>
+      </div>
+      <div>
+        <h5>Prestations</h5>
+        <a href="immobilier.html">Immobilier</a>
+        <a href="food.html">Hôtellerie &amp; Restaurant</a>
+        <a href="chantier.html">Suivi de chantier &amp; drone</a>
+      </div>
+      <div>
+        <h5>Entreprise</h5>
+        <a href="portfolio.html">Réalisations</a>
+        <a href="about.html">À propos</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="mailto:contact.hauvis@gmail.com">contact.hauvis@gmail.com</a>
+        <a href="tel:+33650113238">06 50 11 32 38</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HAUVIS — Tous droits réservés</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#donnees">Politique de confidentialité</a> · <a href="cgv.html">CGV</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Suivi GA4 : clic sur un CTA de contact (n'importe quel bouton "Parler d'un projet" / lien vers Contact)
+  document.querySelectorAll('a[href="contact.html"], a[href="#contact"], .cta-btn').forEach(el => {
+    el.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'clic_contact', { 'event_category': 'engagement', 'lien': el.textContent.trim() });
+      }
+    });
+  });
+
+  (function(){
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if(burger && navLinks){
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        burger.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          burger.classList.remove('active');
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

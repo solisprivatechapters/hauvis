@@ -3,24 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HAUVIS — Création de contenus visuels premium</title>
-<meta name="description" content="HAUVIS est une agence de création de contenus visuels premium : photographie et vidéo immobilière, food, suivi de chantier, community management et marques. Intervention à Paris, Marseille, Aix-en-Provence et dans toute la France.">
+<title>HAUVIS — Studio de stratégie visuelle premium</title>
+<meta name="description" content="HAUVIS est un studio de stratégie visuelle premium : photographie immobilière, vidéo, drone, suivi de chantier, hôtellerie et restauration. Intervention dans le Sud de la France, à Paris et partout en France.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta property="og:title" content="HAUVIS — Création de contenus visuels premium">
-<meta property="og:description" content="HAUVIS est une agence de création de contenus visuels premium : photographie et vidéo immobilière, food, suivi de chantier, community management et marques. Intervention à Paris, Marseille, Aix-en-Provence et dans toute la France.">
+<meta property="og:title" content="HAUVIS — Studio de stratégie visuelle premium">
+<meta property="og:description" content="HAUVIS est un studio de stratégie visuelle premium : photographie immobilière, vidéo, drone, suivi de chantier, hôtellerie et restauration.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "HAUVIS",
+  "description": "Studio de stratégie visuelle premium : photographie, vidéo, drone pour l'immobilier, le suivi de chantier et l'hôtellerie-restauration.",
+  "url": "https://www.hauvis.fr",
+  "telephone": "+33650113238",
+  "email": "contact.hauvis@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue Carrughju di Zucculana",
+    "postalCode": "20620",
+    "addressLocality": "Biguglia",
+    "addressCountry": "FR"
+  },
+  "areaServed": ["Sud de la France", "Corse", "Paris", "Marseille", "Aix-en-Provence", "Nice", "Bastia", "Ajaccio"],
+  "priceRange": "€€€"
+}
+</script>
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
+<!--
+  GOOGLE ANALYTICS 4 — à activer après création de la propriété sur analytics.google.com :
+  1. Créer une propriété GA4 pour hauvis.fr, copier l'ID de mesure (format G-XXXXXXXXXX)
+  2. Remplacer G-XXXXXXXXXX ci-dessous par cet ID, sur cette page ET sur les 10 autres pages du site
+  3. Les événements ci-dessous remontent automatiquement dans GA4 : clic_contact, clic_calendly, formulaire_envoye
+-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --noir:#0B0B0C;
-    --ivoire:#F5F3EF;
-    --or:#C9A664;
+    --noir:#0A0A0A;
+    --ivoire:#F4F1EA;
+    --or:#C6A46A;
     --or-clair:#DEC38B;
-    --anthracite:#3A3A3D;
-    --pierre:#E4DED2;
+    --anthracite:#333333;
+    --pierre:#D8D1C4;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -100,8 +133,28 @@
     white-space:nowrap;
   }
   .cta-btn:hover{background:transparent;color:var(--or);}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:14px 10px;margin:-14px -10px;}
   .burger span{width:22px;height:1px;background:var(--ivoire);}
+  .nav-links.mobile-open{
+    display:flex !important;flex-direction:column;align-items:flex-start;gap:0;
+    position:fixed;top:64px;left:0;right:0;z-index:150;
+    background:var(--noir);padding:8px 40px 24px;
+    border-bottom:1px solid rgba(201,166,100,0.18);
+    max-height:calc(100vh - 64px);overflow-y:auto;
+  }
+  .nav-links.mobile-open a{padding:14px 0;width:100%;border-bottom:1px solid rgba(245,243,239,0.08);opacity:0.9;}
+  .nav-links.mobile-open .has-drop{width:100%;}
+  .nav-links.mobile-open .dropdown{
+    position:static;opacity:1;visibility:visible;transform:none;
+    background:transparent;border:none;padding:0 0 0 16px;margin-top:0;min-width:0;
+  }
+  .nav-links.mobile-open .dropdown a{border-bottom:none;padding:10px 0;font-size:12px;opacity:0.7;}
+  .burger span{transition:transform .25s ease, opacity .25s ease;}
+  .burger.active span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .burger.active span:nth-child(2){opacity:0;}
+  .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:640px){.nav-links.mobile-open{padding:8px 24px 24px;}}
+
   @media(max-width:900px){
     .nav-links{display:none;}
     .burger{display:flex;}
@@ -114,11 +167,17 @@
     background:var(--noir);
     overflow:hidden;
   }
-  .hero-media{position:absolute;inset:0;}
-  .hero-media img{opacity:0.62;}
+  .hero-media{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);}
+  .hero-media .hero-panel{position:relative;overflow:hidden;}
+  .hero-media img{opacity:0.68;}
+  .hero-media .hero-panel::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.35) 100%);
+  }
+  @media(max-width:700px){.hero-media{grid-template-columns:1fr;}.hero-media .hero-panel:nth-child(2),.hero-media .hero-panel:nth-child(3){display:none;}}
   .hero-media::after{
     content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(11,11,12,0.25) 0%, rgba(11,11,12,0.15) 40%, rgba(11,11,12,0.92) 100%);
+    background:linear-gradient(180deg, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.15) 40%, rgba(10,10,10,0.92) 100%);
   }
   .hero-content{
     position:relative;z-index:2;color:var(--ivoire);
@@ -194,6 +253,25 @@
   .paris-cta:hover{background:var(--or-clair);}
 
   /* Expertises grid */
+  .pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--anthracite);}
+  @media(max-width:800px){.pillars-grid{grid-template-columns:1fr;}}
+  .pillar-card{
+    background:var(--noir);color:var(--ivoire);
+    aspect-ratio:3/4;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:flex-end;padding:34px;
+  }
+  .pillar-card img{position:absolute;inset:0;opacity:0.6;transition:opacity .5s, transform .6s;}
+  .pillar-card:hover img{opacity:0.8;transform:scale(1.05);}
+  .pillar-card::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 25%, rgba(10,10,10,0.92) 100%);
+  }
+  .pillar-card .num{font-size:12px;color:var(--or-clair);letter-spacing:0.14em;position:relative;z-index:1;margin-bottom:12px;font-family:'Inter',sans-serif;}
+  .pillar-card h3{position:relative;z-index:1;font-size:clamp(22px,2.4vw,28px);font-weight:400;margin-bottom:12px;}
+  .pillar-card p{position:relative;z-index:1;font-size:13.5px;color:rgba(245,243,239,0.68);line-height:1.6;max-width:280px;margin-bottom:16px;}
+  .pillar-card .pillar-link{position:relative;z-index:1;font-size:12px;letter-spacing:0.04em;color:var(--or-clair);border-bottom:1px solid var(--or-clair);padding-bottom:2px;width:fit-content;}
+
+  /* Expertises grid legacy (autres usages eventuels) */
   .expertise-grid{
     display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
     background:var(--anthracite);
@@ -282,14 +360,11 @@
   .temoin .auteur strong{color:var(--noir);display:block;font-weight:500;}
 
   /* blocs secondaires */
-  .secondaires-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-  @media(max-width:800px){.secondaires-grid{grid-template-columns:repeat(2,1fr);}}
-  .sec-card{border:1px solid var(--pierre);padding:34px 26px;transition:border-color .25s;}
-  .sec-card:hover{border-color:var(--or);}
-  .sec-card .eyebrow{margin-bottom:14px;font-size:11px;}
-  .sec-card h4{font-size:18px;margin-bottom:10px;}
-  .sec-card p{font-size:13px;color:var(--anthracite);line-height:1.6;margin-bottom:18px;}
-  .sec-card a{font-size:12.5px;color:var(--or);border-bottom:1px solid var(--or);padding-bottom:2px;}
+  .comp-band{border:1px solid var(--pierre);padding:44px 40px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;}
+  .comp-band .comp-text .eyebrow{margin-bottom:10px;}
+  .comp-band h4{font-size:20px;margin-bottom:8px;}
+  .comp-band p{font-size:13.5px;color:var(--anthracite);max-width:480px;line-height:1.6;}
+  .comp-band a{font-size:12.5px;color:var(--or);border-bottom:1px solid var(--or);padding-bottom:2px;white-space:nowrap;}
 
   /* CTA final + contact */
   .final{background:var(--noir);color:var(--ivoire);}
@@ -333,29 +408,30 @@
     *{transition:none !important;}
     html{scroll-behavior:auto;}
   }
+  .logo-block{display:flex;flex-direction:column;line-height:1.1;}
+  .tagline{font-size:8.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--or-clair);margin-top:4px;font-family:'Inter',sans-serif;font-weight:400;}
+  @media(max-width:900px){.tagline{display:none;}}
 </style>
 </head>
 <body>
 
 <header id="header">
-  <a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a>
+  <div class="logo-block"><a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a><span class="tagline">Visual Strategy Studio</span></div>
   <nav>
     <div class="nav-links">
       <a href="#accueil" class="current">Accueil</a>
       <div class="has-drop">
-        <a href="#expertises">Prestations ▾</a>
+        <a href="#expertises">Expertises ▾</a>
         <div class="dropdown">
-          <a href="immobilier.html">Immobilier</a>
-          <a href="food.html">Food</a>
-          <a href="chantier.html">Suivi de chantier</a>
-          <a href="community-management.html">Community Management</a>
-          <a href="marques.html">Marques &amp; Publicité</a>
+          <a href="immobilier.html">Immobilier premium</a>
+          <a href="chantier.html">Suivi de chantier &amp; drone</a>
+          <a href="food.html">Hôtellerie &amp; Restaurant</a>
         </div>
       </div>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
+      <a href="portfolio.html">Réalisations</a>
+      <a href="contact.html">Parler d\'un projet</a>
     </div>
-    <a href="#contact" class="cta-btn">Demander un devis</a>
+    <a href="#contact" class="cta-btn">Parler d'un projet</a>
     <div class="burger"><span></span><span></span><span></span></div>
   </nav>
 </header>
@@ -363,15 +439,23 @@
 <!-- HERO -->
 <section class="hero" id="accueil" style="padding:0;">
   <div class="hero-media">
-    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1800&auto=format&fit=crop" alt="Propriété d'exception au crépuscule">
+    <div class="hero-panel">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=900&auto=format&fit=crop" alt="Immobilier premium">
+    </div>
+    <div class="hero-panel">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=900&auto=format&fit=crop" alt="Chantier & Construction">
+    </div>
+    <div class="hero-panel">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=900&auto=format&fit=crop" alt="Hôtellerie & Restaurant">
+    </div>
   </div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Agence de création visuelle premium</div>
-    <h1>L'image à la hauteur<br><em>de votre exigence.</em></h1>
-    <p>Photographie, vidéo et prises de vues aériennes pour révéler la valeur réelle de vos biens, vos marques et vos lieux.</p>
+    <div class="hero-eyebrow">Studio de stratégie visuelle premium</div>
+    <h1>Nous créons des images qui révèlent <em>la valeur</em><br>des lieux, des projets et des marques.</h1>
+    <p>HAUVIS accompagne les agences immobilières, promoteurs, hôtels et restaurants dans la création d'une identité visuelle forte — pensée pour valoriser, convaincre et laisser une impression durable.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-solid">Demander un devis</a>
-      <a href="#portfolio" class="btn-outline">Voir le portfolio</a>
+      <a href="#contact" class="btn-solid">Parler d'un projet</a>
+      <a href="#portfolio" class="btn-outline">Voir les réalisations</a>
     </div>
   </div>
 </section>
@@ -425,35 +509,31 @@
   <div class="wrap">
     <div class="eyebrow reveal">Nos expertises</div>
     <div class="section-head reveal">
-      <h2>Une seule exigence, cinq savoir-faire.</h2>
+      <h2>Trois verticales. Une seule exigence.</h2>
+      <p>HAUVIS concentre son savoir-faire sur trois secteurs où l'image change directement la décision d'un client : vendre, construire, réserver.</p>
     </div>
   </div>
-  <div class="expertise-grid reveal">
-    <a class="expertise-card large" id="immobilier" href="immobilier.html">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Photographie immobilière">
+  <div class="pillars-grid reveal">
+    <a class="pillar-card" id="immobilier" href="immobilier.html">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" alt="Immobilier premium">
       <div class="num">01</div>
-      <h3>Immobilier</h3>
-      <p>Photo, vidéo et drone — pour la vente comme pour la location.</p>
+      <h3>Immobilier premium</h3>
+      <p>Photo, vidéo et drone — pour vendre et louer plus vite, à leur juste valeur.</p>
+      <span class="pillar-link">Découvrir →</span>
     </a>
-    <a class="expertise-card" href="food.html">
-      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=900&auto=format&fit=crop" alt="Photographie culinaire">
+    <a class="pillar-card" href="chantier.html">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop" alt="Suivi de chantier & drone">
       <div class="num">02</div>
-      <h3>Food</h3>
+      <h3>Suivi de chantier &amp; drone</h3>
+      <p>Documenter, communiquer et valoriser l'avancement de vos projets.</p>
+      <span class="pillar-link">Découvrir →</span>
     </a>
-    <a class="expertise-card" href="chantier.html">
-      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=900&auto=format&fit=crop" alt="Suivi de chantier">
+    <a class="pillar-card" href="food.html">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1000&auto=format&fit=crop" alt="Hôtellerie & Restaurant">
       <div class="num">03</div>
-      <h3>Suivi de chantier</h3>
-    </a>
-    <a class="expertise-card" href="community-management.html">
-      <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=900&auto=format&fit=crop" alt="Community Management">
-      <div class="num">04</div>
-      <h3>Community<br>Management</h3>
-    </a>
-    <a class="expertise-card" href="marques.html">
-      <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=900&auto=format&fit=crop" alt="Marques et publicité">
-      <div class="num">05</div>
-      <h3>Marques &amp; Publicité</h3>
+      <h3>Hôtellerie &amp; Restaurant</h3>
+      <p>Donner envie de réserver, avant même la première visite.</p>
+      <span class="pillar-link">Découvrir →</span>
     </a>
   </div>
 </section>
@@ -493,10 +573,10 @@
 <section class="chiffres">
   <div class="wrap">
     <div class="chiffres-grid reveal">
-      <div class="chiffre"><div class="n">250+</div><div class="l">Biens photographiés</div></div>
-      <div class="chiffre"><div class="n">48h</div><div class="l">Délai moyen de livraison</div></div>
-      <div class="chiffre"><div class="n">98%</div><div class="l">Clients satisfaits</div></div>
-      <div class="chiffre"><div class="n">6</div><div class="l">Expertises réunies</div></div>
+      <div class="chiffre"><div class="n" style="font-size:clamp(22px,3vw,32px);">Sur mesure</div><div class="l">Délais annoncés dès la validation du projet</div></div>
+      <div class="chiffre"><div class="n">24h</div><div class="l">Délai de réponse à toute demande</div></div>
+      <div class="chiffre"><div class="n">100%</div><div class="l">Contenus retouchés sur mesure</div></div>
+      <div class="chiffre"><div class="n">3</div><div class="l">Verticales maîtrisées</div></div>
     </div>
   </div>
 </section>
@@ -512,9 +592,8 @@
       <div class="filter-tag active">Tout</div>
       <div class="filter-tag">Immobilier</div>
       <div class="filter-tag">Drone</div>
-      <div class="filter-tag">Food</div>
+      <div class="filter-tag">Hôtellerie</div>
       <div class="filter-tag">Chantiers</div>
-      <div class="filter-tag">Marques</div>
     </div>
     <div class="portfolio-grid reveal">
       <div class="p-item"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=800&auto=format&fit=crop" alt="Villa contemporaine"><div class="p-label">Villa contemporaine — Vente</div></div>
@@ -522,7 +601,6 @@
       <div class="p-item"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=800&auto=format&fit=crop" alt="Vue aérienne domaine"><div class="p-label">Domaine — Drone</div></div>
       <div class="p-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop" alt="Table gastronomique"><div class="p-label">Restaurant — Food</div></div>
       <div class="p-item"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop" alt="Chantier en cours"><div class="p-label">Résidence — Chantier</div></div>
-      <div class="p-item"><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800&auto=format&fit=crop" alt="Contenu de marque"><div class="p-label">Lifestyle — Marque</div></div>
     </div>
   </div>
 </section>
@@ -543,60 +621,15 @@
   </div>
 </section>
 
-<!-- TEMOIGNAGES -->
+<!-- TRANSPARENCE -->
 <section class="temoignages">
-  <div class="wrap">
-    <div class="eyebrow reveal">Ils nous font confiance</div>
-    <div class="temoin-grid reveal">
-      <div class="temoin">
-        <p class="quote">Des visuels qui ont clairement accéléré la vente de nos biens les plus exigeants.</p>
-        <div class="auteur"><strong>Camille R.</strong>Agence immobilière, Paris</div>
-      </div>
-      <div class="temoin">
-        <p class="quote">Un professionnalisme rare, du premier appel à la livraison finale.</p>
-        <div class="auteur"><strong>Julien M.</strong>Conciergerie Airbnb, Bordeaux</div>
-      </div>
-      <div class="temoin">
-        <p class="quote">Le suivi de chantier en timelapse a changé notre communication investisseurs.</p>
-        <div class="auteur"><strong>Sophie D.</strong>Promoteur immobilier</div>
-      </div>
-    </div>
+  <div class="wrap" style="text-align:center;">
+    <div class="eyebrow reveal">Où en est HAUVIS</div>
+    <p style="font-family:'Fraunces',serif;font-style:italic;font-size:clamp(19px,2.4vw,26px);line-height:1.6;max-width:720px;margin:0 auto;color:var(--noir);">Un studio jeune, une exigence déjà là. Notre book se construit projet après projet — chaque nouvelle collaboration y est intégrée dès sa livraison.</p>
+    <p style="font-size:13.5px;color:var(--anthracite);margin-top:20px;">Découvrez <a href="process.html" style="color:var(--or);border-bottom:1px solid var(--or);">notre méthode</a> ou <a href="about.html" style="color:var(--or);border-bottom:1px solid var(--or);">le studio</a>.</p>
   </div>
 </section>
 
-<!-- BLOCS SECONDAIRES -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow reveal">Et aussi</div>
-    <div class="section-head reveal"><h2>Toutes nos expertises visuelles.</h2></div>
-    <div class="secondaires-grid reveal">
-      <div class="sec-card">
-        <div class="eyebrow">Food</div>
-        <h4>Photographie culinaire</h4>
-        <p>Restaurants, hôtels et traiteurs — des visuels qui donnent envie.</p>
-        <a href="food.html">Découvrir →</a>
-      </div>
-      <div class="sec-card">
-        <div class="eyebrow">Chantier</div>
-        <h4>Suivi de chantier</h4>
-        <p>Formules hebdomadaires, mensuelles ou en timelapse.</p>
-        <a href="chantier.html">Découvrir →</a>
-      </div>
-      <div class="sec-card">
-        <div class="eyebrow">Social</div>
-        <h4>Community Management</h4>
-        <p>Une gestion de vos réseaux sociaux, avec exigence.</p>
-        <a href="community-management.html">Découvrir →</a>
-      </div>
-      <div class="sec-card">
-        <div class="eyebrow">Marques</div>
-        <h4>Marques &amp; Publicité</h4>
-        <p>Packshot, lifestyle et contenus publicitaires.</p>
-        <a href="marques.html">Découvrir →</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA FINAL + CONTACT -->
 <section class="final" id="contact">
@@ -607,19 +640,20 @@
         <h2>Parlons de votre projet.</h2>
         <p>Réponse sous 24h. Décrivez votre besoin, nous revenons vers vous avec la formule la plus adaptée.</p>
       </div>
-      <form class="form-row" onsubmit="return false;">
-        <input type="text" placeholder="Nom complet" required>
-        <input type="email" placeholder="Email" required>
-        <select required>
+      <form class="form-row" name="contact-accueil" method="POST" action="merci.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact-accueil">
+        <input type="hidden" name="page_origine" value="Accueil">
+        <p style="position:absolute;left:-9999px;" aria-hidden="true"><label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <input type="text" name="nom" placeholder="Nom complet" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <select required name="activite">
           <option value="" disabled selected>Activité concernée</option>
           <option>Immobilier — Vente</option>
           <option>Immobilier — Location</option>
-          <option>Food</option>
-          <option>Suivi de chantier</option>
-          <option>Community Management</option>
-          <option>Marques &amp; Publicité</option>
+          <option>Hôtellerie &amp; Restaurant</option>
+          <option>Suivi de chantier &amp; drone</option>
         </select>
-        <textarea placeholder="Votre message" rows="3"></textarea>
+        <textarea name="message" placeholder="Votre message" rows="3"></textarea>
         <button type="submit">Envoyer la demande</button>
       </form>
     </div>
@@ -631,26 +665,24 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">HAU<span style="color:var(--or)">V</span>IS</div>
-        <p>Agence de création de contenus visuels premium — Immobilier, Food, Marques et bien plus.</p>
+        <p>Studio de stratégie visuelle premium — Immobilier, Chantier et Hôtellerie-Restaurant.</p>
       </div>
       <div>
         <h5>Prestations</h5>
         <a href="immobilier.html">Immobilier</a>
-        <a href="food.html">Food</a>
-        <a href="chantier.html">Suivi de chantier</a>
-        <a href="community-management.html">Community Management</a>
-        <a href="marques.html">Marques &amp; Publicité</a>
+        <a href="food.html">Hôtellerie &amp; Restaurant</a>
+        <a href="chantier.html">Suivi de chantier &amp; drone</a>
       </div>
       <div>
         <h5>Entreprise</h5>
-        <a href="portfolio.html">Portfolio</a>
+        <a href="portfolio.html">Réalisations</a>
         <a href="#">Blog &amp; actualités</a>
         <a href="faq.html">FAQ</a>
       </div>
       <div>
         <h5>Contact</h5>
         <a href="mailto:contact.hauvis@gmail.com">contact.hauvis@gmail.com</a>
-        <a href="tel:+33636187783">06 36 18 77 83</a>
+        <a href="tel:+33650113238">06 50 11 32 38</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -678,6 +710,23 @@
       tag.classList.add('active');
     });
   });
+
+  (function(){
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if(burger && navLinks){
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        burger.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          burger.classList.remove('active');
+        });
+      });
+    }
+  })();
 </script>
 
 </body>

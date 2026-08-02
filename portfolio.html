@@ -3,18 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — HAUVIS</title>
-<meta name="description" content="Découvrez les réalisations HAUVIS : immobilier, food, chantiers, marques et prises de vues aériennes.">
+<title>Réalisations — HAUVIS</title>
+<meta name="description" content="Découvrez les réalisations HAUVIS : immobilier, chantiers, hôtellerie-restauration et prises de vues aériennes.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta property="og:title" content="Portfolio — HAUVIS">
-<meta property="og:description" content="Découvrez les réalisations HAUVIS : immobilier, food, chantiers, marques et prises de vues aériennes.">
+<meta property="og:title" content="Réalisations — HAUVIS">
+<meta property="og:description" content="Découvrez les réalisations HAUVIS : immobilier, chantiers, hôtellerie-restauration et prises de vues aériennes.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
+<!-- GOOGLE ANALYTICS 4 — remplacer G-XXXXXXXXXX par l'ID de mesure une fois la propriété créée -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--noir:#0B0B0C;--ivoire:#F5F3EF;--or:#C9A664;--or-clair:#DEC38B;--anthracite:#3A3A3D;--pierre:#E4DED2;}
+  :root{--noir:#0A0A0A;--ivoire:#F4F1EA;--or:#C6A46A;--or-clair:#DEC38B;--anthracite:#333333;--pierre:#D8D1C4;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{font-family:'Inter',sans-serif;background:var(--ivoire);color:var(--noir);-webkit-font-smoothing:antialiased;}
@@ -39,14 +47,35 @@
   .dropdown a:hover{opacity:1;background:rgba(201,166,100,0.08);}
   .cta-btn{background:var(--or);color:var(--noir);padding:11px 24px;font-size:12.5px;letter-spacing:0.04em;font-weight:500;border:1px solid var(--or);transition:background .25s, color .25s;white-space:nowrap;}
   .cta-btn:hover{background:transparent;color:var(--or);}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:14px 10px;margin:-14px -10px;}
   .burger span{width:22px;height:1px;background:var(--ivoire);}
+  .nav-links.mobile-open{
+    display:flex !important;flex-direction:column;align-items:flex-start;gap:0;
+    position:fixed;top:64px;left:0;right:0;z-index:150;
+    background:var(--noir);padding:8px 40px 24px;
+    border-bottom:1px solid rgba(201,166,100,0.18);
+    max-height:calc(100vh - 64px);overflow-y:auto;
+  }
+  .nav-links.mobile-open a{padding:14px 0;width:100%;border-bottom:1px solid rgba(245,243,239,0.08);opacity:0.9;}
+  .nav-links.mobile-open .has-drop{width:100%;}
+  .nav-links.mobile-open .dropdown{
+    position:static;opacity:1;visibility:visible;transform:none;
+    background:transparent;border:none;padding:0 0 0 16px;margin-top:0;min-width:0;
+  }
+  .nav-links.mobile-open .dropdown a{border-bottom:none;padding:10px 0;font-size:12px;opacity:0.7;}
+  .burger span{transition:transform .25s ease, opacity .25s ease;}
+  .burger.active span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .burger.active span:nth-child(2){opacity:0;}
+  .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:640px){.nav-links.mobile-open{padding:8px 24px 24px;}}
+
   @media(max-width:900px){.nav-links{display:none;}.burger{display:flex;}}
 
   /* Hero leger */
   .p-hero{padding:170px 0 50px;}
   .p-hero h1{font-size:clamp(34px,5vw,58px);max-width:700px;margin-bottom:16px;}
   .p-hero p{font-size:15px;color:var(--anthracite);max-width:480px;line-height:1.6;}
+  .p-notice{font-size:12.5px;color:var(--anthracite);border-left:2px solid var(--or);padding-left:14px;margin-top:22px;max-width:480px;line-height:1.6;font-style:italic;}
 
   .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px;}
   .filter-tag{padding:9px 18px;font-size:12.5px;border:1px solid var(--anthracite);color:var(--anthracite);cursor:pointer;transition:all .2s;background:transparent;font-family:'Inter',sans-serif;}
@@ -74,34 +103,45 @@
   .final .btn-solid{background:var(--or);color:var(--noir);padding:15px 34px;font-size:13px;letter-spacing:0.04em;font-weight:500;display:inline-block;transition:background .25s;}
   .final .btn-solid:hover{background:var(--or-clair);}
 
-  footer{background:var(--noir);color:rgba(245,243,239,0.6);padding:50px 0;border-top:1px solid rgba(201,166,100,0.15);text-align:center;font-size:11.5px;}
+  footer{background:var(--noir);color:rgba(245,243,239,0.6);padding-top:70px;border-top:1px solid rgba(201,166,100,0.15);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;}
+  @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  .footer-grid h5{color:var(--ivoire);font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;font-weight:500;}
+  .footer-grid a, .footer-grid p{display:block;font-size:13px;margin-bottom:12px;color:rgba(245,243,239,0.55);}
+  .footer-grid a:hover{color:var(--or-clair);}
+  .footer-logo{font-family:'Fraunces',serif;font-size:20px;letter-spacing:0.1em;color:var(--ivoire);margin-bottom:16px;}
+  .footer-bottom{
+    border-top:1px solid rgba(245,243,239,0.1);padding:24px 0;
+    display:flex;justify-content:space-between;font-size:11.5px;flex-wrap:wrap;gap:10px;
+  }
 
   .reveal{opacity:1;transform:none;}
   .reveal.in{opacity:1;transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){*{transition:none !important;}html{scroll-behavior:auto;}}
+  .logo-block{display:flex;flex-direction:column;line-height:1.1;}
+  .tagline{font-size:8.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--or-clair);margin-top:4px;font-family:'Inter',sans-serif;font-weight:400;}
+  @media(max-width:900px){.tagline{display:none;}}
 </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a>
+  <div class="logo-block"><a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a><span class="tagline">Visual Strategy Studio</span></div>
   <nav>
     <div class="nav-links">
       <a href="index.html">Accueil</a>
       <div class="has-drop">
-        <a href="#">Prestations ▾</a>
+        <a href="#">Expertises ▾</a>
         <div class="dropdown">
-          <a href="immobilier.html">Immobilier</a>
-          <a href="food.html">Food</a>
-          <a href="chantier.html">Suivi de chantier</a>
-          <a href="community-management.html">Community Management</a>
-          <a href="marques.html">Marques &amp; Publicité</a>
+          <a href="immobilier.html">Immobilier premium</a>
+          <a href="chantier.html">Suivi de chantier &amp; drone</a>
+          <a href="food.html">Hôtellerie &amp; Restaurant</a>
         </div>
       </div>
-      <a href="portfolio.html" class="current">Portfolio</a>
-      <a href="contact.html">Contact</a>
+      <a href="portfolio.html" class="current">Réalisations</a>
+      <a href="contact.html">Parler d\'un projet</a>
     </div>
-    <a href="contact.html" class="cta-btn">Demander un devis</a>
+    <a href="contact.html" class="cta-btn">Parler d'un projet</a>
     <div class="burger"><span></span><span></span><span></span></div>
   </nav>
 </header>
@@ -109,8 +149,9 @@
 <section class="p-hero">
   <div class="wrap">
     <div class="reveal">
-      <h1>Portfolio</h1>
-      <p>Une sélection de nos réalisations, tous secteurs confondus — immobilier, food, chantiers, marques et prises de vues aériennes.</p>
+      <h1>Réalisations</h1>
+      <p>Une sélection de nos réalisations, tous secteurs confondus — immobilier, chantiers, hôtellerie-restauration et prises de vues aériennes.</p>
+      <p class="p-notice">Ces visuels illustrent la direction artistique HAUVIS. Nos réalisations clients seront ajoutées progressivement à mesure des projets menés.</p>
     </div>
   </div>
 </section>
@@ -121,8 +162,7 @@
       <div class="filter-tag active" data-filter="tout">Tout</div>
       <div class="filter-tag" data-filter="immobilier">Immobilier</div>
       <div class="filter-tag" data-filter="drone">Drone</div>
-      <div class="filter-tag" data-filter="food">Food</div>
-      <div class="filter-tag" data-filter="marques">Marques</div>
+      <div class="filter-tag" data-filter="food">Hôtellerie</div>
       <div class="filter-tag" data-filter="chantiers">Chantiers</div>
       <div class="filter-tag" data-filter="videos">Vidéos</div>
     </div>
@@ -142,15 +182,11 @@
       </div>
       <div class="p-item" data-cat="food">
         <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=700&auto=format&fit=crop" alt="Table gastronomique">
-        <div class="p-overlay"><div class="cat">Food</div><div class="title">Restaurant, Paris</div></div>
+        <div class="p-overlay"><div class="cat">Hôtellerie &amp; Restaurant</div><div class="title">Restaurant, Paris</div></div>
       </div>
       <div class="p-item" data-cat="chantiers">
         <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=700&auto=format&fit=crop" alt="Chantier">
         <div class="p-overlay"><div class="cat">Chantiers</div><div class="title">Résidence, Lyon</div></div>
-      </div>
-      <div class="p-item wide" data-cat="marques">
-        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1000&auto=format&fit=crop" alt="Contenu de marque">
-        <div class="p-overlay"><div class="cat">Marques</div><div class="title">Lifestyle, marque cosmétique</div></div>
       </div>
       <div class="p-item" data-cat="videos">
         <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=700&auto=format&fit=crop" alt="Vidéo immobilière">
@@ -162,7 +198,7 @@
       </div>
       <div class="p-item" data-cat="food">
         <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=700&auto=format&fit=crop" alt="Traiteur">
-        <div class="p-overlay"><div class="cat">Food</div><div class="title">Traiteur, réception</div></div>
+        <div class="p-overlay"><div class="cat">Hôtellerie &amp; Restaurant</div><div class="title">Traiteur, réception</div></div>
       </div>
       <div class="p-item" data-cat="drone">
         <img src="https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?q=80&w=700&auto=format&fit=crop" alt="Chantier aérien">
@@ -175,10 +211,6 @@
       <div class="p-item" data-cat="videos">
         <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=700&auto=format&fit=crop" alt="Vidéo food">
         <div class="p-overlay"><div class="cat">Vidéos — Food</div><div class="title">Réel restaurant</div></div>
-      </div>
-      <div class="p-item" data-cat="marques">
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=700&auto=format&fit=crop" alt="Packshot">
-        <div class="p-overlay"><div class="cat">Marques</div><div class="title">Packshot, cosmétique</div></div>
       </div>
       <div class="p-item tall" data-cat="chantiers">
         <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=700&auto=format&fit=crop" alt="Chantier structure">
@@ -196,12 +228,42 @@
   <div class="wrap">
     <div class="reveal">
       <h2>Un projet en tête ? Discutons-en.</h2>
-      <a href="contact.html" class="btn-solid">Demander un devis</a>
+      <a href="contact.html" class="btn-solid">Parler d'un projet</a>
     </div>
   </div>
 </section>
 
-<footer>HAUVIS — Portfolio — Immobilier, Food, Chantiers, Marques.</footer>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">HAU<span style="color:var(--or)">V</span>IS</div>
+        <p>Studio de stratégie visuelle premium — Immobilier, Chantier et Hôtellerie-Restaurant.</p>
+      </div>
+      <div>
+        <h5>Prestations</h5>
+        <a href="immobilier.html">Immobilier</a>
+        <a href="food.html">Hôtellerie &amp; Restaurant</a>
+        <a href="chantier.html">Suivi de chantier &amp; drone</a>
+      </div>
+      <div>
+        <h5>Entreprise</h5>
+        <a href="portfolio.html">Réalisations</a>
+        <a href="about.html">À propos</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="mailto:contact.hauvis@gmail.com">contact.hauvis@gmail.com</a>
+        <a href="tel:+33650113238">06 50 11 32 38</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HAUVIS — Tous droits réservés</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#donnees">Politique de confidentialité</a> · <a href="cgv.html">CGV</a></span>
+    </div>
+  </div>
+</footer>
 
 <script>
   const revealEls = document.querySelectorAll('.reveal');
@@ -224,6 +286,32 @@
       });
     });
   });
+
+  // Suivi GA4 : clic sur un CTA de contact (n'importe quel bouton "Parler d'un projet" / lien vers Contact)
+  document.querySelectorAll('a[href="contact.html"], a[href="#contact"], .cta-btn').forEach(el => {
+    el.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'clic_contact', { 'event_category': 'engagement', 'lien': el.textContent.trim() });
+      }
+    });
+  });
+
+  (function(){
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if(burger && navLinks){
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        burger.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          burger.classList.remove('active');
+        });
+      });
+    }
+  })();
 </script>
 
 </body>
