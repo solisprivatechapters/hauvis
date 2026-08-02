@@ -113,6 +113,7 @@
 
   /* Calendrier de prise de rendez-vous */
   .rdv-section{padding:20px 0 110px;}
+  .seance-divider{height:1px;background:var(--pierre);margin-bottom:70px;}
   .rdv-title{font-size:clamp(24px,3vw,34px);margin-bottom:10px;}
   .rdv-sub{font-size:14.5px;color:var(--anthracite);margin-bottom:44px;max-width:480px;}
   .rdv-widget{display:grid;grid-template-columns:1fr 1fr;gap:40px;border:1px solid var(--pierre);padding:36px;}
@@ -289,31 +290,59 @@
       <h2 class="rdv-title">Réservez un appel découverte de 20 minutes</h2>
       <p class="rdv-sub">Un échange court pour cerner votre projet et vous orienter vers la formule adaptée — créneaux limités, sur sélection.</p>
 
-      <!--
-        INTÉGRATION CALENDLY — à activer une fois le compte configuré sur calendly.com :
-
-        1. Créer un événement nommé "Appel découverte HAUVIS — 20 min"
-           Durée : 20 minutes. Objectif interne : qualification du projet avant devis.
-
-        2. Disponibilités : définir des créneaux réalistes selon ton emploi du temps réel
-           (éviter un calendrier trop ouvert — quelques créneaux par semaine suffisent).
-
-        3. Dans "Invitee Questions", ajouter dans cet ordre (accessible pros ET particuliers) :
-           - Nom et prénom (texte, obligatoire)
-           - Email (texte, obligatoire — déjà demandé par défaut par Calendly)
-           - Téléphone (texte, obligatoire)
-           - Type de projet (menu déroulant, obligatoire) :
-               Immobilier premium / Suivi de chantier & drone / Hôtellerie & Restaurant / Autre projet
-           - Description du besoin (texte long, obligatoire)
-
-        4. Copier le lien de l'événement (ex : https://calendly.com/hauvis/appel-decouverte-20min)
-           et remplacer CALENDLY_URL ci-dessous par ce lien exact, aux deux endroits où il apparaît.
-      -->
-      <div class="calendly-inline-widget" data-url="CALENDLY_URL?hide_gdpr_banner=1&background_color=0a0a0a&text_color=f4f1ea&primary_color=c6a46a" style="min-width:320px;height:680px;"></div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/contact-hauvis/appel-decouverte-hauvis-20-min?hide_gdpr_banner=1&background_color=0a0a0a&text_color=f4f1ea&primary_color=c6a46a" style="min-width:320px;height:680px;"></div>
       <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
       <p style="font-size:12.5px;color:var(--anthracite);margin-top:20px;">
         Le calendrier ne s'affiche pas ? <a href="mailto:contact.hauvis@gmail.com" style="color:var(--or);border-bottom:1px solid var(--or);">Écrivez-nous directement</a> ou appelez le <a href="tel:+33650113238" style="color:var(--or);border-bottom:1px solid var(--or);">06 50 11 32 38</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="rdv-section reveal" style="padding-top:0;">
+    <div class="wrap">
+      <div class="seance-divider"></div>
+      <div class="eyebrow">Client avec devis validé</div>
+      <h2 class="rdv-title">Réservez directement votre séance</h2>
+      <p class="rdv-sub">Vous avez déjà échangé avec nous et validé une formule ? Choisissez une date, nous confirmons votre créneau sous 24h.</p>
+
+      <div class="rdv-widget">
+        <div class="rdv-calendar">
+          <div class="rdv-cal-header">
+            <button type="button" id="prevMonthSeance" aria-label="Mois précédent">‹</button>
+            <span id="calMonthLabelSeance"></span>
+            <button type="button" id="nextMonthSeance" aria-label="Mois suivant">›</button>
+          </div>
+          <div class="rdv-cal-weekdays">
+            <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
+          </div>
+          <div class="rdv-cal-grid" id="calGridSeance"></div>
+        </div>
+
+        <div class="rdv-slots">
+          <div class="rdv-slots-label" id="slotsLabelSeance">Sélectionnez une date dans le calendrier</div>
+          <div class="rdv-slots-grid" id="slotsGridSeance"></div>
+
+          <form class="rdv-confirm" id="rdvFormSeance" method="POST" action="https://formspree.io/f/mgoggwgd">
+            <input type="hidden" name="_subject" value="Nouvelle demande de réservation de séance — HAUVIS">
+            <input type="hidden" name="_next" value="https://www.hauvis.fr/merci.html">
+            <input type="hidden" name="page_origine" value="Contact — Réservation de séance">
+            <input type="hidden" name="date_souhaitee" id="dateSouhaiteeInput">
+            <input type="hidden" name="creneau_souhaite" id="creneauSouhaiteInput">
+            <input type="text" name="_gotcha" style="display:none">
+            <input type="text" name="nom" placeholder="Nom complet" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="telephone" placeholder="Téléphone" required>
+            <input type="text" name="formule" placeholder="Formule réservée (ex : Signature)">
+            <input type="text" name="adresse_seance" placeholder="Adresse du lieu de la séance" required>
+            <textarea name="message" placeholder="Précisions complémentaires" rows="3" style="border:none;border-bottom:1px solid var(--pierre);padding:10px 0;font-size:14px;font-family:'Inter',sans-serif;outline:none;resize:vertical;"></textarea>
+            <button type="submit">Envoyer ma demande de créneau</button>
+          </form>
+        </div>
+      </div>
+
+      <p style="font-size:12.5px;color:var(--anthracite);margin-top:20px;">
+        Pas encore de devis validé ? Réservez d'abord un <a href="#" onclick="document.querySelector('.rdv-section').scrollIntoView({behavior:'smooth'});return false;" style="color:var(--or);border-bottom:1px solid var(--or);">appel découverte</a> ci-dessus.
       </p>
     </div>
   </section>
@@ -379,6 +408,101 @@
       }
     }
   });
+
+  // ===== Calendrier natif de réservation de séance (Netlify Forms) =====
+  (function(){
+    const calGrid = document.getElementById('calGridSeance');
+    const monthLabel = document.getElementById('calMonthLabelSeance');
+    const slotsLabel = document.getElementById('slotsLabelSeance');
+    const slotsGrid = document.getElementById('slotsGridSeance');
+    const rdvForm = document.getElementById('rdvFormSeance');
+    const dateInput = document.getElementById('dateSouhaiteeInput');
+    const creneauInput = document.getElementById('creneauSouhaiteInput');
+    if(!calGrid) return;
+
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+    let selectedDate = null;
+    let selectedSlot = null;
+
+    const monthNames = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+    const slots = ['09:00','11:00','14:00','16:00'];
+
+    function renderCalendar(){
+      monthLabel.textContent = monthNames[viewDate.getMonth()] + ' ' + viewDate.getFullYear();
+      calGrid.innerHTML = '';
+      const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
+      let startOffset = (firstDay.getDay() + 6) % 7;
+      const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
+
+      for(let i = 0; i < startOffset; i++){
+        const empty = document.createElement('div');
+        empty.className = 'cal-cell empty';
+        calGrid.appendChild(empty);
+      }
+      for(let d = 1; d <= daysInMonth; d++){
+        const cellDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), d);
+        const cell = document.createElement('div');
+        cell.textContent = d;
+        const isWeekend = cellDate.getDay() === 0 || cellDate.getDay() === 6;
+        const isPast = cellDate < today;
+        if(isWeekend || isPast){
+          cell.className = 'cal-cell disabled';
+        } else {
+          cell.className = 'cal-cell available';
+          if(selectedDate && cellDate.getTime() === selectedDate.getTime()){
+            cell.className = 'cal-cell selected';
+          }
+          cell.addEventListener('click', () => {
+            selectedDate = cellDate;
+            selectedSlot = null;
+            renderCalendar();
+            renderSlots();
+          });
+        }
+        calGrid.appendChild(cell);
+      }
+    }
+
+    function renderSlots(){
+      if(!selectedDate){
+        slotsLabel.textContent = 'Sélectionnez une date dans le calendrier';
+        slotsGrid.innerHTML = '';
+        rdvForm.classList.remove('show');
+        return;
+      }
+      const dateStr = selectedDate.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+      slotsLabel.textContent = 'Créneaux souhaités le ' + dateStr;
+      slotsGrid.innerHTML = '';
+      slots.forEach(s => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'slot-btn' + (selectedSlot === s ? ' selected' : '');
+        btn.textContent = s;
+        btn.addEventListener('click', () => {
+          selectedSlot = s;
+          renderSlots();
+          dateInput.value = dateStr;
+          creneauInput.value = s;
+          rdvForm.classList.add('show');
+        });
+        slotsGrid.appendChild(btn);
+      });
+    }
+
+    document.getElementById('prevMonthSeance').addEventListener('click', () => {
+      viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
+      renderCalendar();
+    });
+    document.getElementById('nextMonthSeance').addEventListener('click', () => {
+      viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
+      renderCalendar();
+    });
+
+    renderCalendar();
+    renderSlots();
+  })();
 
   (function(){
     const burger = document.querySelector('.burger');
