@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hôtellerie &amp; Restaurant — HAUVIS</title>
+<meta name="description" content="Photographie et vidéo culinaire premium pour restaurants, hôtels et traiteurs. HAUVIS sublime votre carte et votre établissement.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:title" content="Hôtellerie &amp; Restaurant — HAUVIS">
+<meta property="og:description" content="Photographie et vidéo culinaire premium pour restaurants, hôtels et traiteurs. HAUVIS sublime votre carte et votre établissement.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<!-- GOOGLE ANALYTICS 4 — remplacer G-XXXXXXXXXX par l'ID de mesure une fois la propriété créée -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --noir:#0A0A0A;
+    --ivoire:#F4F1EA;
+    --or:#C6A46A;
+    --or-clair:#DEC38B;
+    --anthracite:#333333;
+    --pierre:#D8D1C4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--ivoire);color:var(--noir);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-0.01em;}
+  a{text-decoration:none;color:inherit;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 40px;}
+  @media(max-width:640px){.wrap{padding:0 24px;}}
+
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 40px;background:rgba(11,11,12,0.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(201,166,100,0.15);
+  }
+  .logo{font-family:'Fraunces',serif;font-size:22px;letter-spacing:0.14em;color:var(--ivoire);display:flex;align-items:baseline;gap:1px;}
+  .logo .v-mark{display:inline-block;transform:translateY(1px) skewY(-6deg);color:var(--or);}
+  nav{display:flex;align-items:center;gap:40px;}
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{color:var(--ivoire);font-size:13px;letter-spacing:0.04em;opacity:0.85;transition:opacity .25s;padding:6px 0;}
+  .nav-links a.current{opacity:1;border-bottom:1px solid var(--or);}
+  .nav-links a:hover{opacity:1;}
+  .has-drop{position:relative;}
+  .dropdown{
+    position:absolute;top:100%;left:50%;transform:translateX(-50%);
+    background:var(--noir);border:1px solid rgba(201,166,100,0.2);
+    min-width:220px;padding:10px 0;margin-top:14px;
+    opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:all .25s ease;
+  }
+  .has-drop:hover .dropdown{opacity:1;visibility:visible;transform:translate(-50%,0);}
+  .dropdown a{display:block;padding:11px 22px;font-size:12.5px;opacity:0.8;}
+  .dropdown a:hover{opacity:1;background:rgba(201,166,100,0.08);}
+  .cta-btn{background:var(--or);color:var(--noir);padding:11px 24px;font-size:12.5px;letter-spacing:0.04em;font-weight:500;border:1px solid var(--or);transition:background .25s, color .25s;white-space:nowrap;}
+  .cta-btn:hover{background:transparent;color:var(--or);}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:14px 10px;margin:-14px -10px;}
+  .burger span{width:22px;height:1px;background:var(--ivoire);}
+  .nav-links.mobile-open{
+    display:flex !important;flex-direction:column;align-items:flex-start;gap:0;
+    position:fixed;top:64px;left:0;right:0;z-index:150;
+    background:var(--noir);padding:8px 40px 24px;
+    border-bottom:1px solid rgba(201,166,100,0.18);
+    max-height:calc(100vh - 64px);overflow-y:auto;
+  }
+  .nav-links.mobile-open a{padding:14px 0;width:100%;border-bottom:1px solid rgba(245,243,239,0.08);opacity:0.9;}
+  .nav-links.mobile-open .has-drop{width:100%;}
+  .nav-links.mobile-open .dropdown{
+    position:static;opacity:1;visibility:visible;transform:none;
+    background:transparent;border:none;padding:0 0 0 16px;margin-top:0;min-width:0;
+  }
+  .nav-links.mobile-open .dropdown a{border-bottom:none;padding:10px 0;font-size:12px;opacity:0.7;}
+  .burger span{transition:transform .25s ease, opacity .25s ease;}
+  .burger.active span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .burger.active span:nth-child(2){opacity:0;}
+  .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:640px){.nav-links.mobile-open{padding:8px 24px 24px;}}
+
+  @media(max-width:900px){.nav-links{display:none;}.burger{display:flex;}}
+
+  .hero{height:78vh;min-height:500px;position:relative;display:flex;align-items:flex-end;background:var(--noir);overflow:hidden;}
+  .hero-media{position:absolute;inset:0;}
+  .hero-media img{opacity:0.68;}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(11,11,12,0.25) 0%, rgba(11,11,12,0.2) 40%, rgba(11,11,12,0.94) 100%);}
+  .hero-content{position:relative;z-index:2;color:var(--ivoire);padding:0 40px 70px;width:100%;}
+  .hero-eyebrow{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--or-clair);margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+  .hero-eyebrow::before{content:"";width:36px;height:1px;background:var(--or);}
+  .hero h1{font-size:clamp(32px,5.4vw,60px);line-height:1.08;font-weight:400;max-width:760px;margin-bottom:20px;}
+  .hero p{font-size:15.5px;line-height:1.6;max-width:480px;color:rgba(245,243,239,0.72);font-weight:300;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:8px;}
+  .btn-outline{
+    border:1px solid rgba(245,243,239,0.4);color:var(--ivoire);
+    padding:14px 30px;font-size:13px;letter-spacing:0.03em;
+    transition:border-color .25s, background .25s;
+  }
+  .btn-outline:hover{border-color:var(--or);background:rgba(201,166,100,0.08);}
+  .btn-solid{
+    background:var(--or);color:var(--noir);padding:14px 30px;
+    font-size:13px;letter-spacing:0.03em;font-weight:500;
+    transition:background .25s;
+  }
+  .btn-solid:hover{background:var(--or-clair);}
+
+  section{padding:110px 0;}
+  @media(max-width:640px){section{padding:70px 0;}}
+  .eyebrow{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--or);margin-bottom:18px;font-weight:500;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(26px,3.2vw,40px);line-height:1.15;}
+  .section-head p{color:var(--anthracite);margin-top:16px;font-size:15px;line-height:1.7;max-width:520px;}
+
+  /* Cibles : Restaurants / Hotels / Traiteurs */
+  .cibles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--anthracite);}
+  @media(max-width:900px){.cibles-grid{grid-template-columns:repeat(2,1fr);}}
+  .cible-card{background:var(--noir);color:var(--ivoire);aspect-ratio:4/5;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;}
+  .cible-card img{position:absolute;inset:0;opacity:0.55;transition:opacity .4s, transform .5s;}
+  .cible-card:hover img{opacity:0.75;transform:scale(1.05);}
+  .cible-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%, rgba(11,11,12,0.88) 100%);}
+  .cible-card .tag{position:relative;z-index:1;font-size:11px;color:var(--or-clair);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;}
+  .cible-card h3{position:relative;z-index:1;font-size:clamp(19px,2vw,26px);margin-bottom:8px;}
+  .cible-card p{position:relative;z-index:1;font-size:13px;color:rgba(245,243,239,0.65);}
+
+  /* Formules */
+  .formules-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:38px;}
+  .formules-head h3{font-size:clamp(20px,2.2vw,28px);}
+  .formule-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
+  .ftab{padding:10px 22px;font-size:12.5px;letter-spacing:0.02em;border:1px solid var(--anthracite);color:var(--anthracite);background:transparent;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;}
+  .ftab.active, .ftab:hover{background:var(--noir);color:var(--ivoire);border-color:var(--noir);}
+  .formule-panel{display:none;}
+  .formule-panel.active{display:block;}
+  .formules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:980px){.formules-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:640px){.formules-grid{grid-template-columns:1fr;}}
+  .formule-card{border:1px solid var(--pierre);padding:32px 26px;position:relative;display:flex;flex-direction:column;transition:border-color .25s, transform .25s;}
+  .formule-card:hover{border-color:var(--or);transform:translateY(-3px);}
+  .formule-card.highlight{border-color:var(--or);background:var(--noir);color:var(--ivoire);}
+  .formule-card.highlight .formule-price{color:var(--or-clair);}
+  .formule-card.highlight .formule-feat{color:rgba(245,243,239,0.7);}
+  .formule-card.highlight .formule-feat li::before{color:var(--or);}
+  .formule-badge{position:absolute;top:-1px;right:24px;background:var(--or);color:var(--noir);font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;font-weight:600;}
+  .formule-name{font-family:'Fraunces',serif;font-size:22px;margin-bottom:6px;}
+  .formule-sub{font-size:12.5px;color:var(--anthracite);margin-bottom:20px;}
+  .formule-card.highlight .formule-sub{color:rgba(245,243,239,0.55);}
+  .formule-price{font-family:'Fraunces',serif;font-size:28px;margin-bottom:8px;}
+  .formule-price span{font-size:12px;font-family:'Inter',sans-serif;color:var(--anthracite);}
+  .formule-card.highlight .formule-price span{color:rgba(245,243,239,0.5);}
+  .formule-save{font-size:11.5px;color:var(--or);margin-bottom:20px;font-weight:500;}
+  .formule-feat{list-style:none;flex:1;margin-bottom:26px;}
+  .formule-feat li{font-size:13.5px;padding:9px 0;border-top:1px solid var(--pierre);position:relative;padding-left:18px;}
+  .formule-card.highlight .formule-feat li{border-color:rgba(245,243,239,0.12);}
+  .formule-feat li::before{content:"—";position:absolute;left:0;color:var(--or);}
+  .formule-cta{text-align:center;padding:13px 0;font-size:12.5px;letter-spacing:0.03em;font-weight:500;border:1px solid var(--noir);color:var(--noir);transition:background .25s, color .25s;}
+  .formule-cta:hover{background:var(--noir);color:var(--ivoire);}
+  .formule-card.highlight .formule-cta{border-color:var(--or);color:var(--or);}
+  .formule-card.highlight .formule-cta:hover{background:var(--or);color:var(--noir);}
+  .formules-note{font-size:12px;color:var(--anthracite);margin-top:18px;}
+
+  /* Portfolio */
+  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px;}
+  .filter-tag{padding:9px 18px;font-size:12.5px;border:1px solid var(--anthracite);color:var(--anthracite);cursor:pointer;transition:all .2s;}
+  .filter-tag.active, .filter-tag:hover{background:var(--noir);color:var(--ivoire);border-color:var(--noir);}
+  .portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media(max-width:900px){.portfolio-grid{grid-template-columns:repeat(2,1fr);}}
+  .p-item{aspect-ratio:1/1;overflow:hidden;position:relative;}
+  .p-item img{transition:transform .5s;}
+  .p-item:hover img{transform:scale(1.06);}
+  .p-item .p-label{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(0deg, rgba(11,11,12,0.75), transparent);color:var(--ivoire);font-size:12px;opacity:0;transition:opacity .3s;}
+  .p-item:hover .p-label{opacity:1;}
+
+  /* Evenements professionnels */
+  .events-section{padding:100px 0;background:var(--ivoire);}
+  .events-intro{max-width:680px;margin-bottom:20px;}
+  .events-note{font-size:12.5px;font-style:italic;color:var(--anthracite);border-left:2px solid var(--or);padding-left:16px;max-width:560px;margin-bottom:48px;line-height:1.6;}
+  .events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:800px){.events-grid{grid-template-columns:1fr;}}
+  .event-video{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--noir);cursor:pointer;}
+  .event-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6;transition:opacity .4s, transform .5s;pointer-events:none;}
+  .event-video:hover video{opacity:0.8;transform:scale(1.05);}
+
+  /* Lightbox video plein ecran */
+  .video-lightbox{
+    display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,10,10,0.96);
+    align-items:center;justify-content:center;padding:5vw;
+  }
+  .video-lightbox.open{display:flex;}
+  .video-lightbox video{max-width:100%;max-height:88vh;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+  .video-lightbox-close{
+    position:absolute;top:24px;right:32px;color:var(--ivoire);font-size:32px;
+    font-family:'Inter',sans-serif;font-weight:300;cursor:pointer;line-height:1;
+    width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+    border:1px solid rgba(244,241,234,0.3);border-radius:50%;transition:border-color .25s;
+  }
+  .video-lightbox-close:hover{border-color:var(--or);}
+  .event-video::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.1) 50%);}
+  .event-play{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:56px;height:56px;border-radius:50%;border:1px solid var(--or-clair);
+    display:flex;align-items:center;justify-content:center;z-index:2;
+    transition:background .3s;
+  }
+  .event-video:hover .event-play{background:rgba(198,164,106,0.15);}
+  .event-play svg{width:16px;height:16px;margin-left:2px;}
+  .event-label{position:absolute;bottom:20px;left:20px;right:20px;z-index:2;color:var(--ivoire);}
+  .event-label .cat{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--or-clair);margin-bottom:4px;}
+  .event-label .title{font-size:14px;font-weight:500;}
+  .events-checklist{list-style:none;margin-top:44px;max-width:680px;display:grid;grid-template-columns:1fr 1fr;gap:6px 30px;}
+  @media(max-width:600px){.events-checklist{grid-template-columns:1fr;}}
+  .events-checklist li{display:flex;gap:12px;padding:9px 0;font-size:13.5px;color:var(--anthracite);border-bottom:1px solid var(--pierre);}
+  .events-checklist .mark{color:var(--or);font-family:'Fraunces',serif;font-style:italic;flex-shrink:0;}
+
+  .social-edition{background:var(--noir);color:var(--ivoire);padding:90px 0;}
+  .social-edition .eyebrow{color:var(--or);}
+  .social-head{max-width:680px;margin-bottom:48px;}
+  .social-head h2{font-size:clamp(24px,3vw,36px);line-height:1.2;color:var(--ivoire);}
+  .social-head p{margin-top:16px;font-size:14.5px;line-height:1.75;color:rgba(245,243,239,0.7);max-width:600px;}
+  .social-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;margin-bottom:36px;}
+  @media(max-width:640px){.social-grid{grid-template-columns:1fr;}}
+  .social-item{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(245,243,239,0.12);}
+  .social-item .tick{width:16px;height:16px;flex-shrink:0;margin-top:2px;border:1px solid var(--or);border-radius:50%;position:relative;}
+  .social-item .tick::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid var(--or);border-width:0 2px 2px 0;transform:rotate(45deg);}
+  .social-item p{font-size:14px;line-height:1.55;color:rgba(245,243,239,0.88);}
+  .social-note{
+    font-size:12.5px;font-style:italic;color:rgba(245,243,239,0.55);
+    border-left:2px solid var(--or);padding-left:16px;max-width:600px;line-height:1.6;margin-bottom:32px;
+  }
+  .social-cta{font-size:12.5px;color:var(--or-clair);border-bottom:1px solid var(--or-clair);padding-bottom:2px;}
+  /* Emplacements prevus pour une evolution future (chiffres, exemples, etudes de cas) :
+     reutiliser .chiffres-grid / .chiffre existants une fois les donnees disponibles,
+     ou ajouter une .social-examples-grid pour des visuels de publications reelles. */
+
+  /* CTA final */
+  .final{background:var(--noir);color:var(--ivoire);}
+  .final-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+  @media(max-width:800px){.final-grid{grid-template-columns:1fr;gap:50px;}}
+  .final h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:18px;}
+  .final p{color:rgba(245,243,239,0.65);font-size:14.5px;line-height:1.7;max-width:420px;}
+  .form-row{display:flex;flex-direction:column;gap:18px;}
+  .form-row input, .form-row select, .form-row textarea{background:transparent;border:none;border-bottom:1px solid rgba(245,243,239,0.25);color:var(--ivoire);padding:12px 0;font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .25s;}
+  .form-row input::placeholder, .form-row textarea::placeholder{color:rgba(245,243,239,0.4);}
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus{border-color:var(--or);}
+  .form-row select option{background:var(--noir);}
+  .form-row button{margin-top:10px;background:var(--or);color:var(--noir);border:none;padding:15px 30px;font-size:13px;letter-spacing:0.04em;font-weight:500;cursor:pointer;transition:background .25s;width:fit-content;}
+  .form-row button:hover{background:var(--or-clair);}
+  .note{font-size:11.5px;color:rgba(245,243,239,0.4);margin-top:4px;}
+
+  footer{background:var(--noir);color:rgba(245,243,239,0.6);padding-top:70px;border-top:1px solid rgba(201,166,100,0.15);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;}
+  @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  .footer-grid h5{color:var(--ivoire);font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;font-weight:500;}
+  .footer-grid a, .footer-grid p{display:block;font-size:13px;margin-bottom:12px;color:rgba(245,243,239,0.55);}
+  .footer-grid a:hover{color:var(--or-clair);}
+  .footer-logo{font-family:'Fraunces',serif;font-size:20px;letter-spacing:0.1em;color:var(--ivoire);margin-bottom:16px;}
+  .footer-bottom{
+    border-top:1px solid rgba(245,243,239,0.1);padding:24px 0;
+    display:flex;justify-content:space-between;font-size:11.5px;flex-wrap:wrap;gap:10px;
+  }
+
+  .reveal{opacity:1;transform:none;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;}html{scroll-behavior:auto;}}
+
+  /* Reassurance + zones d'intervention */
+  .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;}
+  @media(max-width:640px){.trust-grid{grid-template-columns:1fr;}}
+  .trust-item{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--pierre);}
+  .trust-item .tick{width:16px;height:16px;flex-shrink:0;border:1px solid var(--or);border-radius:50%;position:relative;}
+  .trust-item .tick::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid var(--or);border-width:0 2px 2px 0;transform:rotate(45deg);}
+  .trust-item p{font-size:14px;color:var(--noir);}
+  .zones-band{background:var(--pierre);padding:44px 0;}
+  .zones-band .eyebrow{margin-bottom:14px;}
+  .zones-list{display:flex;flex-wrap:wrap;gap:10px;}
+  .zone-tag{font-size:12.5px;color:var(--anthracite);border:1px solid var(--anthracite);padding:8px 16px;}
+  .logo-block{display:flex;flex-direction:column;line-height:1.1;}
+  .tagline{font-size:8.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--or-clair);margin-top:4px;font-family:'Inter',sans-serif;font-weight:400;}
+  @media(max-width:900px){.tagline{display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-block"><a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a><span class="tagline">Visual Strategy Studio</span></div>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="has-drop">
+        <a href="#" class="current">Expertises ▾</a>
+        <div class="dropdown">
+          <a href="immobilier.html">Immobilier pro ou particulier</a>
+          <a href="chantier.html">Suivi de chantier &amp; drone</a>
+          <a href="food.html" class="current">Hôtellerie &amp; Restaurant</a>
+        </div>
+      </div>
+      <a href="portfolio.html">Réalisations</a>
+      <a href="about.html">À propos</a>
+      <a href="process.html">Process</a>
+    </div>
+    <a href="#contact" class="cta-btn">Parler d'un projet</a>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-media">
+    <img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-15.59.51.png" alt="HAUVIS — Hôtellerie &amp; Restaurant">
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Hôtellerie, Restaurant &amp; EVENEMENT</div>
+    <h1>Donnez envie de réserver, avant même la première visite.</h1>
+    <p>Restaurants, hôtels et traiteurs : un client ne réserve pas une prestation, il réserve une expérience qu'il a déjà imaginée en regardant vos photos. HAUVIS construit cette image pas un simple reportage de plats.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-solid">Parler d'un projet</a>
+      <a href="#realisations" class="btn-outline">Voir nos réalisations</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRESENTATION -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal">Pourquoi l'image compte</div>
+    <div class="section-head reveal">
+      <h2>Un plat magnifiquement photographié donne envie de pousser la porte.</h2>
+      <p>Menu en ligne, réseaux sociaux, plateformes de réservation : l'image culinaire est souvent le premier contact entre votre établissement et un client potentiel avant même qu'il ait goûté quoi que ce soit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CIBLES -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="eyebrow reveal">Nos prestations</div>
+    <div class="section-head reveal"><h2>Quatre univers, un même savoir-faire.</h2></div>
+  </div>
+  <div class="cibles-grid reveal">
+    <div class="cible-card">
+      <img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.04.21.png" alt="Restaurant">
+      <div class="tag">01</div>
+      <h3>Restaurants</h3>
+      <p>Carte, ambiance de salle, plats signature — de quoi donner envie de réserver une table.</p>
+    </div>
+    <div class="cible-card">
+      <img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.15.24.png" alt="Hôtel">
+      <div class="tag">02</div>
+      <h3>Hôtels</h3>
+      <p>Petit-déjeuner, restauration, espaces communs — en cohérence avec notre expertise Immobilier.</p>
+    </div>
+    <div class="cible-card">
+      <img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.01.52.png" alt="Traiteur">
+      <div class="tag">03</div>
+      <h3>Traiteurs</h3>
+      <p>Mise en scène événementielle, buffets, prestations en contexte de réception.</p>
+    </div>
+    <a href="#evenements" class="cible-card">
+      <img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/IMG_1123.jpg" alt="Événements professionnels">
+      <div class="tag">04</div>
+      <h3>Événements</h3>
+      <p>Lancements, dîners d'entreprise, inaugurations — exclusivement professionnel.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FORMULES -->
+<section id="formules">
+  <div class="wrap">
+    <div class="eyebrow reveal">Nos formules</div>
+    <div class="section-head reveal">
+      <h2>Photo, Vidéo, ou les deux.</h2>
+      <p>Trois niveaux de prestation dans chaque catégorie, pour s'adapter à votre établissement et votre budget.</p>
+    </div>
+
+    <div class="formule-tabs reveal">
+      <button class="ftab active" data-target="food-photo">Photo</button>
+      <button class="ftab" data-target="food-video">Vidéo</button>
+      <button class="ftab" data-target="food-duo">Photo &amp; Vidéo</button>
+    </div>
+
+    <div class="formule-panel active reveal" id="food-photo">
+      <div class="formules-grid">
+        <div class="formule-card">
+          <div class="formule-name">Essentiel</div>
+          <div class="formule-sub">Photo</div>
+          <div class="formule-price">320€ HT <span>/ séance</span></div>
+          <ul class="formule-feat">
+            <li>Séance courte (1h30)</li>
+            <li>15 clichés retouchés</li>
+            <li>Livraison sous 4 jours</li>
+          </ul>
+          <a href="#contact" class="formule-cta" onclick="preselect('Photo — Essentiel')">Demander cette formule</a>
+        </div>
+        <div class="formule-card highlight">
+          <div class="formule-badge">Le plus choisi</div>
+          <div class="formule-name">Confort</div>
+          <div class="formule-sub">Photo</div>
+          <div class="formule-price">550€ HT <span>/ séance</span></div>
+          <ul class="formule-feat">
+            <li>Demi-journée (3h)</li>
+            <li>25 clichés retouchés</li>
+            <li>Stylisme culinaire léger</li>
+            <li>Livraison sous 48h</li>
+          </ul>
+          <a href="#contact" class="formule-cta" onclick="preselect('Photo — Confort')">Demander cette formule</a>
+        </div>
+        <div class="formule-card">
+          <div class="formule-name">Prestige</div>
+          <div class="formule-sub">Photo</div>
+          <div class="formule-price">850€ HT <span>/ séance</span></div>
+          <ul class="formule-feat">
+            <li>Journée complète</li>
+            <li>40+ clichés, direction artistique</li>
+            <li>Stylisme culinaire complet</li>
+            <li>Livraison prioritaire sous 48h</li>
+          </ul>
+          <a href="#contact" class="formule-cta" onclick="preselect('Photo — Prestige')">Demander cette formule</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="formule-panel" id="food-video">
+      <div class="formules-grid">
+        <div class="formule-card">
+          <div class="formule-name">Essentiel</div>
+          <div class="formule-sub">Vidéo</div>
+          <div class="formule-price">400€ HT <span>/ séance</span></div>
+          <ul class="formule-feat">
+            <li>2-3 (selon rush disponible) Réel court (30-45s)</li>
+            <li>Montage simple</li>
+            <li>Livraison sous 4 jours</li>
+          </ul>
+          <a href="#contact" class="formule-cta" onclick="preselect('Vidéo — Essentiel')">Demander cette formule</a>
+        </div>
+        <div class="formule-card highlight">
+          <div class="formule-badge">Le plus choisi</div>
+          <div class="formule-name">Confort</div>
+          <div class="formule-sub">Vidéo</div>
+          <div class="formule-price">650€ HT <span>/ séance</span></div>
+          <ul class="formule-feat">
+            <li>4 formats courts pour réseaux sociaux</li>
+            <li>Mise en scène des plats en mouvement</li>
+            <li>Étalonnage professionnel</li>
+            <li>Livraison sous 48h</li>
+          </ul>
+          <a href="#contact" class="formule-cta" onclick="preselect('Vidéo — Confort')">Demander cette formule</a>
+        </div>
+        <div class="formule-card">
+          <div class="formule-name">Prestige</div>
+          <div class="formule-sub">Vidéo</div>
+          <div class="formule-price">950€ HT <span>/ séance</span></div>
+          <ul class="formule-feat">
+            <li>Vidéo de marque complète</li>
+            <li>Mise en scène avancée, ambiance de salle</li>
+            <li>Montage &amp; étalonnage premium</li>
+            <li>Livraison prioritaire sous 48h</li>
+          </ul>
+          <a href="#contact" class="formule-cta" onclick="preselect('Vidéo — Prestige')">Demander cette formule</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="formule-panel" id="food-duo">
+      <div class="formules-grid">
+        <div class="formule-card">
+          <div class="formule-name">Essentiel</div>
+          <div class="formule-sub">Photo &amp; Vidéo</div>
+          <div class="formule-price">680€ HT <span>/ séance</span></div>
+
+          <ul class="formule-feat">
+            <li>Formule Photo Essentiel</li>
+            <li>Formule Vidéo Essentiel</li>
+            <li>Livraison sous 4 jours</li>
+          </ul>
+          <a href="#contact" class="formule-cta" onclick="preselect('Photo & Vidéo — Essentiel')">Demander cette formule</a>
+        </div>
+        <div class="formule-card highlight">
+          <div class="formule-badge">Le plus choisi</div>
+          <div class="formule-name">Confort</div>
+          <div class="formule-sub">Photo &amp; Vidéo</div>
+          <div class="formule-price">1250€ HT <span>/ séance</span></div>
+        
+          <ul class="formule-feat">
+            <li>Formule Photo Confort</li>
+            <li>Formule Vidéo Confort</li>
+            <li>Cohérence visuelle garantie</li>
+            <li>Livraison sous 48h</li>
+          </ul>
+          <a href="#contact" class="formule-cta" onclick="preselect('Photo & Vidéo — Confort')">Demander cette formule</a>
+        </div>
+        <div class="formule-card">
+          <div class="formule-name">Prestige</div>
+          <div class="formule-sub">Photo &amp; Vidéo</div>
+          <div class="formule-price">1850€ HT <span>/ séance</span></div>
+
+          <ul class="formule-feat">
+            <li>Formule Photo Prestige</li>
+            <li>Formule Vidéo Prestige</li>
+            <li>Direction artistique complète</li>
+            <li>Livraison prioritaire sous 48h</li>
+          </ul>
+          <a href="#contact" class="formule-cta" onclick="preselect('Photo & Vidéo — Prestige')">Demander cette formule</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="formules-note">Tarifs HT indicatifs, ajustés selon la taille de l'établissement et la complexité du stylisme souhaité.</p>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section style="background:var(--pierre);" id="realisations">
+  <div class="wrap">
+    <div class="eyebrow reveal">Réalisations</div>
+    <div class="section-head reveal"><h2>Un aperçu de nos dernières séances food.</h2></div>
+    <div class="filters reveal">
+      <div class="filter-tag active">Tout</div>
+      <div class="filter-tag">Restaurants</div>
+      <div class="filter-tag">Hôtels</div>
+      <div class="filter-tag">Traiteurs</div>
+      <div class="filter-tag">Photo</div>
+      <div class="filter-tag">Vidéo</div>
+    </div>
+    <div class="portfolio-grid reveal">
+      <div class="p-item"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.04.30.png" alt="Plat gastronomique"><div class="p-label">Restaurant — Photo</div></div>
+      <div class="p-item"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.04.43.png" alt="Petit-déjeuner hôtel"><div class="p-label">Hôtel — Photo</div></div>
+      <div class="p-item"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.02.57.png" alt="Dessert en clair-obscur"><div class="p-label">Restaurant — Photo</div></div>
+      <div class="p-item"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.04.53.png" alt="Buffet traiteur"><div class="p-label">Traiteur — Photo</div></div>
+      <div class="p-item"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.06.56.png" alt="Ambiance de salle"><div class="p-label">Restaurant — Vidéo</div></div>
+      <div class="p-item"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.07.00.png" alt="Table dressée"><div class="p-label">Traiteur — Photo</div></div>
+      <div class="p-item"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.05.47.png" alt="Cuisine en action"><div class="p-label">Restaurant — Vidéo</div></div>
+      <div class="p-item"><img src="http://www.manelyastudio.com/wp-content/uploads/2026/08/Capture-decran-2026-08-02-a-16.04.21.png" alt="Salle de restaurant"><div class="p-label">Restaurant — Photo</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI CHOISIR HAUVIS -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal">Pourquoi choisir HAUVIS</div>
+    <div class="section-head reveal"><h2>Le même niveau d'exigence que pour l'immobilier, appliqué au food.</h2></div>
+    <div class="trust-grid reveal">
+      <div class="trust-item"><div class="tick"></div><p>Photo, vidéo et stylisme culinaire réunis</p></div>
+      <div class="trust-item"><div class="tick"></div><p>Réactivité — devis sous 24h</p></div>
+      <div class="trust-item"><div class="tick"></div><p>Une direction artistique adaptée à votre établissement</p></div>
+      <div class="trust-item"><div class="tick"></div><p>Livraison rapide, sous 48h</p></div>
+      <div class="trust-item"><div class="tick"></div><p>Formats prêts pour menu, réseaux et plateformes</p></div>
+      <div class="trust-item"><div class="tick"></div><p>Réservation simple, en quelques clics</p></div>
+      <div class="trust-item"><div class="tick"></div><p>Formules claires, sans surprise</p></div>
+      <div class="trust-item"><div class="tick"></div><p>Cohérence visuelle avec vos autres supports de com</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONES D'INTERVENTION -->
+<!-- EVENEMENTS PROFESSIONNELS -->
+<section class="events-section" id="evenements">
+  <div class="wrap">
+    <div class="eyebrow reveal">Événements professionnels</div>
+    <div class="events-intro reveal">
+      <h2 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(24px,3vw,36px);line-height:1.2;">Vos événements professionnels, valorisés comme vos espaces.</h2>
+      <p style="color:var(--anthracite);margin-top:16px;font-size:15px;line-height:1.75;">Lancement de produit, dîner d'entreprise, inauguration, séminaire — HAUVIS couvre vos événements professionnels avec la même exigence que le reste de nos productions.</p>
+    </div>
+    <p class="events-note reveal">Cette prestation s'adresse exclusivement aux événements professionnels — HAUVIS ne couvre pas les événements privés (mariages, anniversaires, réceptions personnelles).</p>
+
+    <div class="events-grid reveal">
+      <div class="event-video" data-video="http://www.manelyastudio.com/wp-content/uploads/2026/08/soiree-blanche.mov">
+        <video src="http://www.manelyastudio.com/wp-content/uploads/2026/08/soiree-blanche.mov" muted playsinline preload="metadata"></video>
+        <div class="event-play"><svg viewBox="0 0 24 24" fill="none"><path d="M6 4l14 8-14 8V4z" fill="#F4F1EA"/></svg></div>
+        <div class="event-label"><div class="cat">Vidéo</div><div class="title">Soirée d'entreprise, ambiance blanche</div></div>
+      </div>
+      <div class="event-video" data-video="http://www.manelyastudio.com/wp-content/uploads/2026/08/soiree-house-arabic.mov">
+        <video src="http://www.manelyastudio.com/wp-content/uploads/2026/08/soiree-house-arabic.mov" muted playsinline preload="metadata"></video>
+        <div class="event-play"><svg viewBox="0 0 24 24" fill="none"><path d="M6 4l14 8-14 8V4z" fill="#F4F1EA"/></svg></div>
+        <div class="event-label"><div class="cat">Vidéo</div><div class="title">Soirée house arabic</div></div>
+      </div>
+      <div class="event-video" data-video="http://www.manelyastudio.com/wp-content/uploads/2026/08/lafouine.mov">
+        <video src="http://www.manelyastudio.com/wp-content/uploads/2026/08/lafouine.mov" muted playsinline preload="metadata"></video>
+        <div class="event-play"><svg viewBox="0 0 24 24" fill="none"><path d="M6 4l14 8-14 8V4z" fill="#F4F1EA"/></svg></div>
+        <div class="event-label"><div class="cat">Vidéo</div><div class="title">Showcase, LAFOUINE</div></div>
+      </div>
+    </div>
+
+    <ul class="events-checklist reveal">
+      <li><span class="mark">—</span> Lancement de produit ou de service</li>
+      <li><span class="mark">—</span> Dîner ou cocktail d'entreprise</li>
+      <li><span class="mark">—</span> Inauguration, portes ouvertes</li>
+      <li><span class="mark">—</span> Séminaire, conférence, salon professionnel</li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="zones-band" style="padding-top:0;">
+  <div class="wrap">
+    <div class="eyebrow reveal">Zone d'intervention</div>
+    <div class="zones-list reveal">
+      <span class="zone-tag">Paris</span>
+      <span class="zone-tag">Marseille</span>
+      <span class="zone-tag">Aix-en-Provence</span>
+      <span class="zone-tag">Nice</span>
+      <span class="zone-tag">Cannes</span>
+      <span class="zone-tag">Toulouse</span>
+      <span class="zone-tag">Montpellier</span>
+      <span class="zone-tag">Bastia</span>
+      <span class="zone-tag">Ajaccio</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFUSION SIGNATURE — option complementaire, Hospitality uniquement -->
+<section class="social-edition">
+  <div class="wrap">
+    <div class="eyebrow reveal">Option complémentaire</div>
+    <div class="social-head reveal">
+      <h2>Diffusion Signature</h2>
+      <p>Les plus belles images méritent d'être vues. Pour certains établissements sélectionnés, HAUVIS peut prolonger l'impact de ses productions par une diffusion éditoriale sur ses réseaux sociaux. Cette option permet d'offrir une visibilité supplémentaire tout en respectant l'identité de votre établissement et notre ligne artistique.</p>
+    </div>
+
+    <div class="social-grid reveal">
+      <div class="social-item">
+        <div class="tick"></div>
+        <p><strong style="color:var(--ivoire);">Reel premium</strong> optimisé pour les réseaux sociaux</p>
+      </div>
+      <div class="social-item">
+        <div class="tick"></div>
+        <p><strong style="color:var(--ivoire);">Publication</strong> sur les réseaux sociaux HAUVIS, selon validation éditoriale</p>
+      </div>
+      <div class="social-item">
+        <div class="tick"></div>
+        <p><strong style="color:var(--ivoire);">Stories</strong> mettant en avant votre établissement</p>
+      </div>
+      <div class="social-item">
+        <div class="tick"></div>
+        <p><strong style="color:var(--ivoire);">Identification</strong> de votre établissement sur chaque publication</p>
+      </div>
+      <div class="social-item">
+        <div class="tick"></div>
+        <p><strong style="color:var(--ivoire);">Rapport de performance</strong> — portée, vues et interactions</p>
+      </div>
+    </div>
+
+    <p class="social-note reveal">La diffusion est proposée uniquement pour les établissements sélectionnés, afin de préserver la cohérence éditoriale et l'image de marque de HAUVIS. HAUVIS ne garantit aucun nombre de vues, de réservations ou de clients.</p>
+
+    <a href="#contact" class="social-cta reveal">Évoquer cette option lors de votre demande →</a>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final" id="contact">
+  <div class="wrap">
+    <div class="final-grid reveal">
+      <div>
+        <div class="eyebrow">Réservation</div>
+        <h2>Réservez votre séance.</h2>
+        <p>Réponse sous 24h. Précisez votre établissement et vos disponibilités, nous vous proposons un créneau adapté.</p>
+      </div>
+      <form class="form-row" name="devis-food" method="POST" action="merci.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="devis-food">
+        <input type="hidden" name="page_origine" value="Hôtellerie &amp; Restaurant">
+        <input type="hidden" name="activite" value="Hôtellerie &amp; Restaurant">
+        <p style="position:absolute;left:-9999px;" aria-hidden="true"><label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <select required name="type_etablissement">
+          <option value="" disabled selected>Type d'établissement</option>
+          <option>Restaurant</option>
+          <option>Hôtel</option>
+          <option>Traiteur</option>
+		  <option>Evenement</option>
+        </select>
+        <input type="text" id="formule-input" name="formule" placeholder="Formule souhaitée (ex : Photo — Confort)">
+        <input type="text" name="nom" placeholder="Nom complet" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Votre message" rows="3"></textarea>
+        <button type="submit">Envoyer la demande</button>
+        <span class="note">Réponse sous 24h.</span>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX VIDEO -->
+<div class="video-lightbox" id="videoLightbox">
+  <div class="video-lightbox-close" id="videoLightboxClose">&times;</div>
+  <video id="lightboxVideoPlayer" controls playsinline></video>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">HAU<span style="color:var(--or)">V</span>IS</div>
+        <p>Studio de stratégie visuelle premium — Immobilier, Chantier et Hôtellerie-Restaurant.</p>
+      </div>
+      <div>
+        <h5>Prestations</h5>
+        <a href="immobilier.html">Immobilier</a>
+        <a href="food.html">Hôtellerie &amp; Restaurant</a>
+        <a href="chantier.html">Suivi de chantier &amp; drone</a>
+      </div>
+      <div>
+        <h5>Entreprise</h5>
+        <a href="portfolio.html">Réalisations</a>
+        <a href="about.html">À propos</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="mailto:contact.hauvis@gmail.com">contact.hauvis@gmail.com</a>
+        <a href="tel:+33650113238">06 50 11 32 38</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HAUVIS — Tous droits réservés</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#donnees">Politique de confidentialité</a> · <a href="cgv.html">CGV</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => io.observe(el));
+
+  document.querySelectorAll('.ftab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.formule-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.target).classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.filter-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+    });
+  });
+
+  function preselect(formule){
+    document.getElementById('formule-input').value = formule;
+  }
+
+  // Suivi GA4 : clic sur un CTA de contact (n'importe quel bouton "Parler d'un projet" / lien vers Contact)
+  document.querySelectorAll('a[href="contact.html"], a[href="#contact"], .cta-btn').forEach(el => {
+    el.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'clic_contact', { 'event_category': 'engagement', 'lien': el.textContent.trim() });
+      }
+    });
+  });
+
+  // ===== Lightbox video (evenements professionnels) =====
+  (function(){
+    const lightbox = document.getElementById('videoLightbox');
+    const player = document.getElementById('lightboxVideoPlayer');
+    const closeBtn = document.getElementById('videoLightboxClose');
+    if(!lightbox || !player) return;
+
+    function openVideo(url){
+      player.src = url;
+      player.muted = false;
+      player.currentTime = 0;
+      lightbox.classList.add('open');
+      player.play().catch(() => {});
+      document.body.style.overflow = 'hidden';
+    }
+    function closeVideo(){
+      player.pause();
+      player.removeAttribute('src');
+      player.load();
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.event-video').forEach(card => {
+      card.addEventListener('click', () => openVideo(card.dataset.video));
+    });
+    closeBtn.addEventListener('click', closeVideo);
+    lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeVideo(); });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeVideo(); });
+  })();
+
+  (function(){
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if(burger && navLinks){
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        burger.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          burger.classList.remove('active');
+        });
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

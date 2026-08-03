@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process — HAUVIS</title>
+<meta name="description" content="Découvrez comment HAUVIS transforme un premier échange en dossier visuel complet — de la prise de contact à la livraison, et jusqu'au partenariat de long terme.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:title" content="Process — HAUVIS">
+<meta property="og:description" content="Le parcours client HAUVIS, de la prise de contact au partenariat de long terme.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<!-- GOOGLE ANALYTICS 4 — remplacer G-XXXXXXXXXX par l'ID de mesure une fois la propriété créée -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--noir:#0A0A0A;--ivoire:#F4F1EA;--or:#C6A46A;--or-clair:#DEC38B;--anthracite:#333333;--pierre:#D8D1C4;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--ivoire);color:var(--noir);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-0.01em;}
+  a{text-decoration:none;color:inherit;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 40px;}
+  @media(max-width:640px){.wrap{padding:0 24px;}}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(11,11,12,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,166,100,0.15);}
+  .logo{font-family:'Fraunces',serif;font-size:22px;letter-spacing:0.14em;color:var(--ivoire);display:flex;align-items:baseline;gap:1px;}
+  .logo .v-mark{display:inline-block;transform:translateY(1px) skewY(-6deg);color:var(--or);}
+  nav{display:flex;align-items:center;gap:40px;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{color:var(--ivoire);font-size:13px;letter-spacing:0.04em;opacity:0.85;transition:opacity .25s;padding:6px 0;}
+  .nav-links a.current{opacity:1;border-bottom:1px solid var(--or);}
+  .nav-links a:hover{opacity:1;}
+  .has-drop{position:relative;}
+  .dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--noir);border:1px solid rgba(201,166,100,0.2);min-width:220px;padding:10px 0;margin-top:14px;opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:all .25s ease;}
+  .has-drop:hover .dropdown{opacity:1;visibility:visible;transform:translate(-50%,0);}
+  .dropdown a{display:block;padding:11px 22px;font-size:12.5px;opacity:0.8;}
+  .dropdown a:hover{opacity:1;background:rgba(201,166,100,0.08);}
+  .cta-btn{background:var(--or);color:var(--noir);padding:11px 24px;font-size:12.5px;letter-spacing:0.04em;font-weight:500;border:1px solid var(--or);transition:background .25s, color .25s;white-space:nowrap;}
+  .cta-btn:hover{background:transparent;color:var(--or);}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:14px 10px;margin:-14px -10px;}
+  .burger span{width:22px;height:1px;background:var(--ivoire);}
+  .nav-links.mobile-open{
+    display:flex !important;flex-direction:column;align-items:flex-start;gap:0;
+    position:fixed;top:64px;left:0;right:0;z-index:150;
+    background:var(--noir);padding:8px 40px 24px;
+    border-bottom:1px solid rgba(201,166,100,0.18);
+    max-height:calc(100vh - 64px);overflow-y:auto;
+  }
+  .nav-links.mobile-open a{padding:14px 0;width:100%;border-bottom:1px solid rgba(245,243,239,0.08);opacity:0.9;}
+  .nav-links.mobile-open .has-drop{width:100%;}
+  .nav-links.mobile-open .dropdown{
+    position:static;opacity:1;visibility:visible;transform:none;
+    background:transparent;border:none;padding:0 0 0 16px;margin-top:0;min-width:0;
+  }
+  .nav-links.mobile-open .dropdown a{border-bottom:none;padding:10px 0;font-size:12px;opacity:0.7;}
+  .burger span{transition:transform .25s ease, opacity .25s ease;}
+  .burger.active span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .burger.active span:nth-child(2){opacity:0;}
+  .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:640px){.nav-links.mobile-open{padding:8px 24px 24px;}}
+
+  @media(max-width:900px){.nav-links{display:none;}.burger{display:flex;}}
+
+  main{padding-top:110px;}
+
+  .p-hero{padding:50px 0 70px;}
+  .p-hero .eyebrow{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--or);margin-bottom:16px;font-weight:500;}
+  .p-hero h1{font-size:clamp(30px,4.4vw,50px);max-width:760px;line-height:1.15;margin-bottom:16px;}
+  .p-hero p{font-size:15px;color:var(--anthracite);max-width:580px;line-height:1.7;}
+
+  section{padding:90px 0;}
+  @media(max-width:640px){section{padding:56px 0;}}
+  .eyebrow{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--or);margin-bottom:18px;font-weight:500;}
+  .section-head{max-width:680px;margin-bottom:50px;}
+  .section-head h2{font-size:clamp(24px,3vw,34px);line-height:1.18;}
+  .section-head p{color:var(--anthracite);margin-top:14px;font-size:14.5px;line-height:1.7;max-width:580px;}
+
+  /* Etapes principales */
+  .steps{display:flex;flex-direction:column;}
+  .step-row{display:grid;grid-template-columns:90px 1fr;gap:30px;padding:36px 0;border-bottom:1px solid var(--pierre);}
+  .step-row:first-child{border-top:1px solid var(--pierre);}
+  @media(max-width:600px){.step-row{grid-template-columns:50px 1fr;gap:18px;}}
+  .step-num{font-family:'Fraunces',serif;font-style:italic;font-size:38px;color:var(--or);}
+  @media(max-width:600px){.step-num{font-size:26px;}}
+  .step-content h3{font-size:19px;margin-bottom:10px;}
+  .step-content p{font-size:14px;color:var(--anthracite);line-height:1.7;max-width:640px;}
+  .step-content .step-tag{display:inline-block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--or);border:1px solid rgba(201,166,100,0.4);padding:5px 12px;margin-top:14px;}
+
+  /* Ladder */
+  .ladder-band{background:var(--noir);color:var(--ivoire);}
+  .ladder-grid{display:flex;gap:2px;background:rgba(245,243,239,0.12);margin-top:10px;}
+  @media(max-width:800px){.ladder-grid{flex-direction:column;}}
+  .ladder-item{flex:1;background:var(--noir);padding:30px 22px;position:relative;}
+  .ladder-item.highlight{background:#141414;}
+  .ladder-item .l-num{font-size:11px;color:var(--or-clair);letter-spacing:0.1em;margin-bottom:10px;}
+  .ladder-item h4{font-size:16px;margin-bottom:8px;}
+  .ladder-item p{font-size:12.5px;color:rgba(245,243,239,0.65);line-height:1.5;}
+  .ladder-arrow{display:flex;align-items:center;justify-content:center;color:var(--or);font-size:16px;padding:0 4px;}
+  @media(max-width:800px){.ladder-arrow{transform:rotate(90deg);padding:8px 0;}}
+
+  /* Garanties */
+  .garanties-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--pierre);}
+  @media(max-width:700px){.garanties-grid{grid-template-columns:1fr;}}
+  .garantie-item{background:var(--ivoire);padding:30px 26px;}
+  .garantie-item h4{font-size:15px;margin-bottom:8px;font-weight:500;}
+  .garantie-item p{font-size:13px;color:var(--anthracite);line-height:1.6;}
+
+  .final{background:var(--pierre);padding:90px 0;text-align:center;}
+  .final h2{font-size:clamp(24px,3vw,34px);margin-bottom:24px;max-width:600px;margin-left:auto;margin-right:auto;}
+  .final .btn-solid{background:var(--noir);color:var(--ivoire);padding:15px 34px;font-size:13px;letter-spacing:0.04em;font-weight:500;display:inline-block;transition:background .25s;}
+  .final .btn-solid:hover{background:var(--anthracite);}
+
+  footer{background:var(--noir);color:rgba(245,243,239,0.6);padding-top:70px;border-top:1px solid rgba(201,166,100,0.15);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;}
+  @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  .footer-grid h5{color:var(--ivoire);font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;font-weight:500;}
+  .footer-grid a, .footer-grid p{display:block;font-size:13px;margin-bottom:12px;color:rgba(245,243,239,0.55);}
+  .footer-grid a:hover{color:var(--or-clair);}
+  .footer-logo{font-family:'Fraunces',serif;font-size:20px;letter-spacing:0.1em;color:var(--ivoire);margin-bottom:16px;}
+  .footer-bottom{
+    border-top:1px solid rgba(245,243,239,0.1);padding:24px 0;
+    display:flex;justify-content:space-between;font-size:11.5px;flex-wrap:wrap;gap:10px;
+  }
+  .logo-block{display:flex;flex-direction:column;line-height:1.1;}
+  .tagline{font-size:8.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--or-clair);margin-top:4px;font-family:'Inter',sans-serif;font-weight:400;}
+  @media(max-width:900px){.tagline{display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-block"><a href="index.html" class="logo">HAU<span class="v-mark">V</span>IS</a><span class="tagline">Visual Strategy Studio</span></div>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="has-drop">
+        <a href="#">Expertises ▾</a>
+        <div class="dropdown">
+          <a href="immobilier.html">Immobilier pro ou particulier</a>
+          <a href="chantier.html">Suivi de chantier &amp; drone</a>
+          <a href="food.html">Hôtellerie &amp; Restaurant</a>
+        </div>
+      </div>
+      <a href="portfolio.html">Réalisations</a>
+      <a href="about.html">À propos</a>
+      <a href="process.html" class="current">Process</a>
+    </div>
+    <a href="contact.html" class="cta-btn">Parler d'un projet</a>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<main>
+  <section class="p-hero wrap">
+    <div class="eyebrow">Notre méthode</div>
+    <h1>Un parcours clair, du premier échange au partenariat de long terme.</h1>
+    <p>Quel que soit le pôle — Immobilier, Chantier ou Hospitality — HAUVIS suit le même parcours structuré, pensé pour que vous sachiez toujours à quoi vous attendre.</p>
+  </section>
+
+  <!-- ETAPES -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="steps">
+        <div class="step-row">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Diagnostic</h3>
+            <p>Vous présentez votre bien, votre projet ou votre établissement. HAUVIS identifie avec vous l'objectif réel — vendre plus vite, rassurer des investisseurs, ou donner envie de réserver — et la stratégie visuelle la plus adaptée pour l'atteindre.</p>
+            <span class="step-tag">Réponse sous 24h</span>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Proposition &amp; cadrage</h3>
+            <p>Vous recevez une proposition claire — l'une de nos 4 formules par pôle — construite comme une stratégie visuelle, pas comme un simple devis technique : le contenu exact, le délai et le tarif, sans ligne cachée.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Production</h3>
+            <p>La séance photo, vidéo et/ou drone est d'abord un exercice de direction artistique, pas une simple prise de vue technique : chaque cadrage, chaque lumière sert l'objectif business défini à l'étape précédente — vendre, rassurer ou donner envie.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h3>Direction artistique &amp; post-production</h3>
+            <p>Retouche experte, montage et mise en cohérence avec votre image de marque — jamais de traitement automatique générique.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">05</div>
+          <div class="step-content">
+            <h3>Livraison</h3>
+            <p>Vos contenus livrés dans les délais annoncés, dans les formats prêts à l'emploi pour vos annonces, vos réseaux ou votre communication interne.</p>
+            <span class="step-tag">48h à 5 jours selon la formule</span>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">06</div>
+          <div class="step-content">
+            <h3>Suivi &amp; partenariat</h3>
+            <p>Satisfait de la collaboration ? La plupart de nos clients passent naturellement à une offre Abonnement — un rythme de contenu régulier, un interlocuteur dédié, et la tranquillité de ne plus jamais repartir d'une page blanche.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE LADDER -->
+  <section class="ladder-band">
+    <div class="wrap">
+      <div class="eyebrow">Comment évolue notre collaboration</div>
+      <div class="section-head" style="max-width:700px;">
+        <h2 style="color:var(--ivoire);">De la première prestation au partenariat stratégique.</h2>
+        <p style="color:rgba(245,243,239,0.65);">La même logique s'applique sur les 3 pôles HAUVIS — vous montez en gamme à votre rythme, jamais par obligation.</p>
+      </div>
+      <div class="ladder-grid">
+        <div class="ladder-item">
+          <div class="l-num">01</div>
+          <h4>Essentielle</h4>
+          <p>Un premier contact simple, pour découvrir HAUVIS sans engagement lourd.</p>
+        </div>
+        <div class="ladder-arrow">→</div>
+        <div class="ladder-item highlight">
+          <div class="l-num">02</div>
+          <h4>Signature</h4>
+          <p>L'offre que la majorité de nos clients choisissent — le cœur de notre savoir-faire.</p>
+        </div>
+        <div class="ladder-arrow">→</div>
+        <div class="ladder-item">
+          <div class="l-num">03</div>
+          <h4>Premium</h4>
+          <p>Pour les projets, biens ou établissements qui méritent un traitement d'exception.</p>
+        </div>
+        <div class="ladder-arrow">→</div>
+        <div class="ladder-item">
+          <div class="l-num">04</div>
+          <h4>Abonnement</h4>
+          <p>Réservé aux professionnels — HAUVIS devient un partenaire, pas un prestataire ponctuel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIES -->
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Nos engagements</div>
+      <div class="section-head"><h2>Ce que HAUVIS garantit à chaque projet.</h2></div>
+    </div>
+    <div class="garanties-grid">
+      <div class="garantie-item"><h4>Délais tenus</h4><p>Chaque formule affiche un délai précis, respecté sauf cas de force majeure clairement communiqué.</p></div>
+      <div class="garantie-item"><h4>Validation &amp; ajustements maîtrisés</h4><p>Chaque offre prévoit une phase de validation encadrée, pour ajuster les livrables avec précision, sans perdre en efficacité.</p></div>
+      <div class="garantie-item"><h4>Interlocuteur unique</h4><p>Un seul point de contact du premier échange à la livraison, quel que soit le pôle concerné.</p></div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Parlons de votre prochain projet.</h2>
+      <p style="color:var(--anthracite);font-size:14px;max-width:520px;margin:0 auto 30px;line-height:1.6;">Basée dans le Sud de la France, HAUVIS accompagne ses clients partout en France.</p>
+      <a href="contact.html" class="btn-solid">Parler d'un projet</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">HAU<span style="color:var(--or)">V</span>IS</div>
+        <p>Studio de stratégie visuelle premium — Immobilier, Chantier et Hôtellerie-Restaurant.</p>
+      </div>
+      <div>
+        <h5>Prestations</h5>
+        <a href="immobilier.html">Immobilier</a>
+        <a href="food.html">Hôtellerie &amp; Restaurant</a>
+        <a href="chantier.html">Suivi de chantier &amp; drone</a>
+      </div>
+      <div>
+        <h5>Entreprise</h5>
+        <a href="portfolio.html">Réalisations</a>
+        <a href="about.html">À propos</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="mailto:contact.hauvis@gmail.com">contact.hauvis@gmail.com</a>
+        <a href="tel:+33650113238">06 50 11 32 38</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HAUVIS — Tous droits réservés</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#donnees">Politique de confidentialité</a> · <a href="cgv.html">CGV</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Suivi GA4 : clic sur un CTA de contact (n'importe quel bouton "Parler d'un projet" / lien vers Contact)
+  document.querySelectorAll('a[href="contact.html"], a[href="#contact"], .cta-btn').forEach(el => {
+    el.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'clic_contact', { 'event_category': 'engagement', 'lien': el.textContent.trim() });
+      }
+    });
+  });
+
+  (function(){
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if(burger && navLinks){
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        burger.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          burger.classList.remove('active');
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demande envoyée — HAUVIS</title>
+<meta name="description" content="Votre demande a bien été reçue par HAUVIS.">
+<meta name="robots" content="noindex">
+<!-- GOOGLE ANALYTICS 4 — remplacer G-XXXXXXXXXX par l'ID de mesure une fois la propriété créée -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+  // Atteindre cette page = un formulaire vient d'être envoyé avec succès
+  gtag('event', 'formulaire_envoye', { 'event_category': 'conversion' });
+</script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--noir:#0A0A0A;--ivoire:#F4F1EA;--or:#C6A46A;--or-clair:#DEC38B;--anthracite:#333333;--pierre:#D8D1C4;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Inter',sans-serif;background:var(--noir);color:var(--ivoire);
+    min-height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:40px;-webkit-font-smoothing:antialiased;
+  }
+  .box{max-width:520px;}
+  .logo{font-family:'Fraunces',serif;font-size:26px;letter-spacing:0.16em;margin-bottom:40px;}
+  .logo .v{color:var(--or);display:inline-block;transform:skewY(-6deg) translateY(1px);}
+  .check{
+    width:56px;height:56px;border:1px solid var(--or);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin:0 auto 30px;
+  }
+  .check svg{width:22px;height:22px;}
+  h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(24px,3.4vw,34px);margin-bottom:18px;}
+  p{font-size:15px;color:rgba(244,241,234,0.7);line-height:1.7;margin-bottom:36px;}
+  a.btn{
+    background:var(--or);color:var(--noir);padding:14px 30px;font-size:13px;
+    letter-spacing:0.03em;font-weight:500;text-decoration:none;display:inline-block;
+    transition:background .25s;
+  }
+  a.btn:hover{background:var(--or-clair);}
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="logo">HAU<span class="v">V</span>IS</div>
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C6A46A" stroke-width="1.5"><path d="M4 12l5 5L20 6"/></svg>
+    </div>
+    <h1>Votre demande a bien été reçue.</h1>
+    <p>Merci pour votre message. HAUVIS vous répond sous 24h avec une proposition adaptée à votre projet.</p>
+    <a href="index.html" class="btn">Retour à l'accueil</a>
+  </div>
+</body>
+</html>
