@@ -5,8 +5,5 @@ Disallow: /plaquette-hauvis.pdf
 Disallow: /plaquette-hauvis-courte.pdf
 Disallow: /presentation-hotellerie.html
 Disallow: /presentation-hotellerie-courte.html
-Disallow: /hauvis-plaquette-immobilier-longue.html
-Disallow: /hauvis-plaquette-chantier-longue.html
-Disallow: /hauvis-plaquette-hotellerie-longue.html
 
 Sitemap: https://www.hauvis.fr/sitemap.xml
